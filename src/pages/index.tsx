@@ -1,8 +1,13 @@
-import Link from 'next/link'
+import * as React from 'react';
+import Link from 'next/link';
 
-export const config = { amp: true }
+type IndexPageProps = {
+  message: string;
+};
 
-export default function HomePage(props: { message: string }) {
+export const config = { amp: true };
+
+export default function HomePage(props: IndexPageProps) {
   return (
     <div>
       <h1>Index Page</h1>
@@ -10,10 +15,10 @@ export default function HomePage(props: { message: string }) {
       <Link href="/new">to New Page</Link>
       <amp-img src="/profile.png" width="300" height="300" />
     </div>
-    );
+  );
 }
 
-HomePage.getInitialProps = () => {
+HomePage.getInitialProps = (): IndexPageProps => {
   const { data } = require('../init-data');
   return data;
-}
+};
