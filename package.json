@@ -6,15 +6,23 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "gray-matter": "4.0.2",
     "next": "9.2.2",
     "react": "16.13.0",
-    "react-dom": "16.13.0"
+    "react-dom": "16.13.0",
+    "remark": "11.0.2",
+    "remark-frontmatter": "1.3.2",
+    "remark-react": "6.0.0",
+    "retext": "7.0.1",
+    "unist-util-visit": "2.0.2",
+    "vfile-reporter": "6.0.0"
   },
   "devDependencies": {
     "@types/node": "13.7.7",
