@@ -10,9 +10,9 @@ module.exports = {
     return {
       '/': { page: '/' },
       '/new': { page: '/new' },
-      '/posts/hello-nextjs': { page: '/posts/[key]', query: { key: 'hello-nextjs' } },
-      '/posts/learn-nextjs': { page: '/posts/[key]', query: { key: 'learn-nextjs' } },
-      '/posts/deploy-nextjs': { page: '/posts/[key]', query: { key: 'deploy-nextjs' } },
+      '/notes/introduction': { page: '/notes/[id]', query: { id: 'introduction' } },
+      '/labels/place': { page: '/labels/[id]', query: { id: 'place' } },
+      '/labels/watering': { page: '/labels/[id]', query: { id: 'watering' } },
     };
   },
 };
