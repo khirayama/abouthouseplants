@@ -19,6 +19,5 @@ export default function HomePage(props: IndexPageProps) {
 }
 
 HomePage.getInitialProps = (): IndexPageProps => {
-  const { data } = require('../init-data');
-  return data;
+  return { message: 'ok' };
 };

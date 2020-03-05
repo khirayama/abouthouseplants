@@ -19,6 +19,5 @@ export default function NewPage(props: NewPageProps) {
 }
 
 NewPage.getInitialProps = (): NewPageProps => {
-  const { data } = require('../init-data');
-  return data;
+  return { message: 'ok' };
 };
