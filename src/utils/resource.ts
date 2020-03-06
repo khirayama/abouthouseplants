@@ -6,7 +6,7 @@ import grayMatter from 'gray-matter';
 import remark from 'remark';
 import remark2react from 'remark-react';
 
-import { Image } from '../components/Image';
+import { AMPImage } from '../components/AMPImage';
 
 export type Resource = {
   id: string;
@@ -26,7 +26,7 @@ export const resource = {
     const result = remark()
       .use(remark2react, {
         remarkReactComponents: {
-          img: Image,
+          img: AMPImage,
         },
       })
       .processSync(res.content);
