@@ -1,4 +1,4 @@
 ## TODO
 
-- `materials` ディレクトリ作成
-- `assets` utilsを作成
+- [x] `materials` ディレクトリ作成
+- [ ] `assets` utilsを作成
