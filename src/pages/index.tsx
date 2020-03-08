@@ -1,23 +1,37 @@
 import * as React from 'react';
 import Link from 'next/link';
 
-type IndexPageProps = {
-  message: string;
-};
+import { resource, Resource } from '../utils/resource';
 
 export const config = { amp: true };
 
+type IndexPageProps = {
+  resource: {
+    introduction: Resource;
+  };
+};
+
 export default function HomePage(props: IndexPageProps) {
+  console.log(props.resource.introduction);
+
+  const intro = props.resource.introduction;
+
   return (
     <div>
       <h1>Index Page</h1>
-      <p>{props.message}</p>
-      <Link href="/new">to New Page</Link>
-      <amp-img src="/profile.png" width="300" height="300" />
+      <Link href={intro.slug}>
+        <a>
+          <h3>{props.resource.introduction.data.title}</h3>
+        </a>
+      </Link>
     </div>
   );
 }
 
 HomePage.getInitialProps = (): IndexPageProps => {
-  return { message: 'ok' };
+  return {
+    resource: {
+      introduction: resource.get('notes', 'introduction'),
+    },
+  };
 };

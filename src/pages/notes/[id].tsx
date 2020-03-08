@@ -16,8 +16,7 @@ export default function PostPage(props: PostPageProps) {
       <p>{props.resource.id}</p>
       <p>{props.resource.type}</p>
       <p>{props.resource.contents}</p>
-      <Link href="/">to Index Page</Link>
-      <amp-img src="/profile.png" width="300" height="300" />
+      <Link href="/"><a>to Index Page</a></Link>
     </div>
   );
 }

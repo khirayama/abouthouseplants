@@ -13,7 +13,6 @@ export default function NewPage(props: NewPageProps) {
       <h1>New Page</h1>
       <p>{props.message}</p>
       <Link href="/">to Index Page</Link>
-      <amp-img src="/profile.png" width="300" height="300" />
     </div>
   );
 }
