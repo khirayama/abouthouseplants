@@ -1,3 +1,8 @@
+const path = require('path');
+const fs = require('fs');
+
+const glob = require('glob');
+
 module.exports = {
   webpack: config => {
     return Object.assign({}, config, {
@@ -7,12 +12,30 @@ module.exports = {
     });
   },
   exportPathMap: async (defaultPathMap, { dev, dir, outDir, distDir, buildId }) => {
-    return {
-      '/': { page: '/' },
-      '/new': { page: '/new' },
-      '/notes/introduction': { page: '/notes/[id]', query: { id: 'introduction' } },
-      '/labels/place': { page: '/labels/[id]', query: { id: 'place' } },
-      '/labels/watering': { page: '/labels/[id]', query: { id: 'watering' } },
-    };
+    const exportPathMap = {};
+
+    const resourceTypes = [];
+
+    const resourceRootPath = path.join(process.cwd(), 'resources');
+    const resourcePaths = glob
+      .sync(`${resourceRootPath}/**/*.md`)
+      .map(p => p.replace(resourceRootPath, '').replace('.md', ''));
+    resourcePaths.forEach(resourcePath => {
+      const resourceType = resourcePath.split('/')[1];
+      resourceTypes.push(resourceType);
+
+      const resourceId = resourcePath.split('/')[2];
+      exportPathMap[resourcePath] = { page: `/${resourceType}/[id]`, query: { id: resourceId } };
+    });
+
+    const pageRootPath = path.join(process.cwd(), 'src', 'pages');
+    const pagePaths = glob.sync(`${pageRootPath}/**/*.tsx`).map(p => p.replace(pageRootPath, '').replace('.tsx', ''));
+    pagePaths.forEach(pagePath => {
+      const pageName = pagePath.split('/')[1];
+      if (resourceTypes.indexOf(pageName) === -1) {
+        exportPathMap[pageName] = { page: `/${pageName}` };
+      }
+    });
+    return exportPathMap;
   },
 };
