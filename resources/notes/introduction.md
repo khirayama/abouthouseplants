@@ -10,4 +10,4 @@ labels:
 
 観葉植物のこと。
 
-![観葉植物のこと。](/a-close-up-of-a-leaf-on-white-background.jpg)
+![観葉植物のこと。](/images/a-close-up-of-a-leaf-on-white-background.jpeg)
