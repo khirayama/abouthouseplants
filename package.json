@@ -7,12 +7,14 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "build:assets": "ts-node --project tsconfig.bin.json bin/asset.ts",
     "export": "next build && next export"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "glob": "7.1.6",
     "gray-matter": "4.0.2",
     "next": "9.2.2",
     "react": "16.13.0",
@@ -21,12 +23,15 @@
     "remark-frontmatter": "1.3.2",
     "remark-react": "6.0.0",
     "retext": "7.0.1",
+    "sharp": "0.24.1",
     "vfile-reporter": "6.0.0"
   },
   "devDependencies": {
+    "@types/glob": "7.1.1",
     "@types/node": "13.7.7",
     "@types/react": "16.9.23",
     "@types/react-dom": "16.9.5",
+    "@types/sharp": "0.24.0",
     "@typescript-eslint/eslint-plugin": "2.21.0",
     "@typescript-eslint/parser": "2.21.0",
     "eslint": "6.8.0",
@@ -35,6 +40,7 @@
     "eslint-plugin-prettier": "3.1.2",
     "eslint-plugin-react": "7.18.3",
     "prettier": "1.19.1",
+    "ts-node": "8.6.2",
     "typescript": "3.8.3"
   }
 }
