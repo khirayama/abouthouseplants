@@ -10,6 +10,7 @@ import { AMPImage } from '../components/AMPImage';
 
 export type Resource = {
   id: string;
+  slug: string;
   type: string;
   data: {
     [key: string]: string;
@@ -22,6 +23,7 @@ export const resource = {
     const mdPath = path.join(process.cwd(), 'resources', type, `${id}.md`);
     const doc = fs.readFileSync(mdPath, { encoding: 'utf-8' });
     const res = grayMatter(doc);
+    const slug = `/${type}/${id}`;
 
     const result = remark()
       .use(remark2react, {
@@ -32,6 +34,7 @@ export const resource = {
       .processSync(res.content);
     return {
       id,
+      slug,
       type,
       data: res.data,
       contents: result.contents,
