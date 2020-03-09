@@ -8,21 +8,31 @@ import remark2react from 'remark-react';
 
 import { AMPImage } from '../components/AMPImage';
 
-export type Resource = {
+export type NoteResourceData = {
+  labels: string[];
+};
+
+export type ResourceData<T> = {
+  title: string;
+  description: string;
+  created: string;
+  updated: string;
+} & T;
+
+export type Resource<T = {}> = {
   id: string;
   slug: string;
   type: string;
-  data: {
-    [key: string]: string;
-  };
+  data: ResourceData<T>;
   contents: React.ReactNode;
 };
 
 export const resource = {
-  get: (type: string, id: string) => {
+  get: function<T = {}>(type: string, id: string): Resource<T> {
     const mdPath = path.join(process.cwd(), 'resources', type, `${id}.md`);
     const doc = fs.readFileSync(mdPath, { encoding: 'utf-8' });
     const res = grayMatter(doc);
+    const data = res.data as ResourceData<T>;
     const slug = `/${type}/${id}`;
 
     const result = remark()
@@ -32,12 +42,16 @@ export const resource = {
         },
       })
       .processSync(res.content);
+
     return {
       id,
       slug,
       type,
-      data: res.data,
+      data,
       contents: result.contents,
     };
+  },
+  getCollection: function<T = {}>(type: string, ids: string[]): Resource<T>[] {
+    return ids.map(id => resource.get(type, id));
   },
 };
