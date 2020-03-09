@@ -2,7 +2,11 @@
   "name": "about-house-plants",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "author": "khirayama",
+  "engines": {
+    "node": "13.6.0",
+    "npm": "6.13.4"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -10,9 +14,6 @@
     "build:assets": "ts-node --project tsconfig.bin.json bin/asset.ts",
     "export": "next build && next export"
   },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
   "dependencies": {
     "glob": "7.1.6",
     "gray-matter": "4.0.2",
