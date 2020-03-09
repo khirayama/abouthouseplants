@@ -1,37 +1,43 @@
 import * as React from 'react';
-import Link from 'next/link';
 
-import { resource, Resource } from '../utils/resource';
+import { resource, Resource, NoteResourceData } from '../utils/resource';
+import { Layout } from '../components/Layout';
+import { Header } from '../components/Header';
+import { Link } from '../components/Link';
 
 export const config = { amp: true };
 
 type IndexPageProps = {
+  pathname: string;
   resource: {
-    introduction: Resource;
+    intro: Resource<NoteResourceData>;
+    introLabels: Resource[];
   };
 };
 
-export default function HomePage(props: IndexPageProps) {
-  console.log(props.resource.introduction);
-
-  const intro = props.resource.introduction;
+export default function IndexPage(props: IndexPageProps) {
+  const intro = props.resource.intro;
+  const introLabels = props.resource.introLabels.map(introLabel => introLabel.data.title);
 
   return (
-    <div>
-      <h1>Index Page</h1>
-      <Link href={intro.slug}>
-        <a>
-          <h3>{props.resource.introduction.data.title}</h3>
-        </a>
+    <Layout title={intro.data.title} description={intro.data.description} keywords={introLabels}>
+      <Header pathname={props.pathname} />
+      <Link to={intro.slug}>
+        <h3>{props.resource.intro.data.title}</h3>
       </Link>
-    </div>
+    </Layout>
   );
 }
 
-HomePage.getInitialProps = (): IndexPageProps => {
+IndexPage.getInitialProps = (props: any): IndexPageProps => {
+  const intro = resource.get<NoteResourceData>('notes', 'introduction');
+  const introLabels = resource.getCollection('labels', intro.data.labels);
+
   return {
+    pathname: props.pathname,
     resource: {
-      introduction: resource.get('notes', 'introduction'),
+      intro,
+      introLabels,
     },
   };
 };
