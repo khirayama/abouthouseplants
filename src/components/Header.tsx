@@ -25,13 +25,15 @@ export function Header(props: HeaderProps) {
     <>
       <style jsx>{styles}</style>
       <header className="header">
-        <Link to="/">
-          {props.pathname === '/' ? (
-            <h1 className="heading">{config.name}</h1>
-          ) : (
-            <h2 className="heading">{config.name}</h2>
-          )}
-        </Link>
+        {props.pathname === '/' ? (
+          <h1 className="heading">
+            <Link to="/">{config.name}</Link>
+          </h1>
+        ) : (
+          <h2 className="heading">
+            <Link to="/">{config.name}</Link>
+          </h2>
+        )}
       </header>
     </>
   );
