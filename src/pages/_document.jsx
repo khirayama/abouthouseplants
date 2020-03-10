@@ -1,7 +1,7 @@
 import React from 'react';
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 
-import { resetStyles } from '../styles/resetStyle';
+import { resetStyles } from '../styles/resetStyles';
 
 export default class MyDocument extends NextDocument {
   render() {
