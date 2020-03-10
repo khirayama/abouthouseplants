@@ -1,5 +1,7 @@
 ## TODO
 
+- [ ] sitemap作成
+- [ ] GA埋め込み
 - [x] assetsのpathを自動で回すように
 - [x] exportのpathを自動で回すように
 - [x] `materials` ディレクトリ作成
