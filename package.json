@@ -24,7 +24,7 @@
     "remark-frontmatter": "1.3.2",
     "remark-react": "6.0.0",
     "sharp": "0.24.1",
-    "styled-components": "5.0.1"
+    "styled-jsx": "3.2.4"
   },
   "devDependencies": {
     "@types/glob": "7.1.1",
@@ -32,7 +32,7 @@
     "@types/react": "16.9.23",
     "@types/react-dom": "16.9.5",
     "@types/sharp": "0.24.0",
-    "@types/styled-components": "5.0.1",
+    "@types/styled-jsx": "2.2.8",
     "@typescript-eslint/eslint-plugin": "2.21.0",
     "@typescript-eslint/parser": "2.21.0",
     "eslint": "6.8.0",
