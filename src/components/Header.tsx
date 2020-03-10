@@ -1,17 +1,38 @@
 import * as React from 'react';
-import styled from 'styled-components';
+import css from 'styled-jsx/css';
+
+import { config } from '../config';
+import { Link } from '../components/Link';
 
 type HeaderProps = {
   pathname: string;
 };
 
-const Wrapper = styled.header`
-  padding: 20px;
+const styles = css`
+  .header {
+    padding: 28px;
+    font-family: serif;
+    text-align: center;
+  }
+  .heading {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+  }
 `;
 
 export function Header(props: HeaderProps) {
-  const headingContents = '観葉植物のこと。';
-  const heading = props.pathname === '/' ? <h1>{headingContents}</h1> : <h2>{headingContents}</h2>;
-
-  return <Wrapper>{heading}</Wrapper>;
+  return (
+    <>
+      <style jsx>{styles}</style>
+      <header className="header">
+        <Link to="/">
+          {props.pathname === '/' ? (
+            <h1 className="heading">{config.name}</h1>
+          ) : (
+            <h2 className="heading">{config.name}</h2>
+          )}
+        </Link>
+      </header>
+    </>
+  );
 }
