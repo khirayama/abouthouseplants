@@ -11,12 +11,12 @@ type HeaderProps = {
 const styles = css`
   .header {
     padding: 28px;
-    font-family: serif;
     text-align: center;
   }
   .heading {
     font-size: 1.5rem;
     letter-spacing: 2px;
+    font-family: serif;
   }
 `;
 
