@@ -32,7 +32,7 @@ module.exports = {
     const pagePaths = glob.sync(`${pageRootPath}/**/*.tsx`).map(p => p.replace(pageRootPath, '').replace('.tsx', ''));
     pagePaths.forEach(pagePath => {
       const pageName = pagePath.split('/')[1];
-      if (resourceTypes.indexOf(pageName) === -1) {
+      if (pagePath.indexOf('[id]') === -1) {
         exportPathMap[pageName] = { page: `/${pageName}` };
       }
     });
