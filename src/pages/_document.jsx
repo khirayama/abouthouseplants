@@ -9,8 +9,22 @@ export default class MyDocument extends NextDocument {
       <Html lang="ja">
         <Head>
           <style jsx>{resetStyles}</style>
+          <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
         </Head>
         <body>
+          <amp-analytics type="gtag" data-credentials="include">
+            <script type="application/json" dangerouslySetInnerHTML={{ __html: `{
+              "vars": {
+                "gtag_id": "UA-160291296-1",
+                "config" : {
+                  "UA-160291296-1": {
+                    "groups": "default",
+                    "site_speed_sample_rate": 100
+                  }
+                }
+              }
+            }`}} />
+          </amp-analytics>
           <Main />
           <NextScript />
         </body>
