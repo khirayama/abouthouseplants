@@ -9,19 +9,18 @@ type HeaderProps = {
 };
 
 const styles = css`
-  .header {
-    padding: 28px;
-  }
   .heading {
     font-size: 1.5rem;
     letter-spacing: 2px;
     font-family: serif;
     text-align: center;
+    padding: 24px;
   }
   .sub-heading {
     font-size: 1rem;
     letter-spacing: 2px;
     font-family: serif;
+    padding: 12px 24px;
   }
 `;
 
@@ -29,7 +28,7 @@ export function Header(props: HeaderProps) {
   return (
     <>
       <style jsx>{styles}</style>
-      <header className="header">
+      <header>
         {props.pathname === '/' ? (
           <h1 className="heading">
             <Link to="/">{config.name}</Link>
