@@ -1,12 +1,12 @@
 import * as React from 'react';
 import Link from 'next/link';
 
-import { resource, Resource } from '../../utils/resource';
+import { Resource, ResourceShape } from '../../utils/Resource';
 
 export const config = { amp: true };
 
 type PostPageProps = {
-  resource: Resource;
+  resource: ResourceShape;
 };
 
 export default function PostPage(props: PostPageProps) {
@@ -25,6 +25,6 @@ export default function PostPage(props: PostPageProps) {
 
 PostPage.getInitialProps = (data: any): PostPageProps => {
   const id = data.query.id;
-  const res = resource.get('labels', id);
+  const res = Resource.findOne('labels', id);
   return { resource: res };
 };
