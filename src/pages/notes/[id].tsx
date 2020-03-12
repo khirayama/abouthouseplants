@@ -5,6 +5,7 @@ import { config as siteConfig } from '../../config';
 import { resource, Resource, NoteResourceData } from '../../utils/resource';
 import { Layout } from '../../components/Layout';
 import { Header } from '../../components/Header';
+import { Heading } from '../../components/Heading';
 import { Footer } from '../../components/Footer';
 
 export const config = { amp: true };
@@ -19,14 +20,7 @@ type PostPageProps = {
 
 const styles = css`
   .note-container {
-    max-width: 384px;
-    margin: 0 auto;
     padding: 24px;
-  }
-
-  .note-title {
-    font-size: 1.5rem;
-    padding: 24px 0 0;
   }
 
   .note-contents {
@@ -44,7 +38,7 @@ export default function PostPage(props: PostPageProps) {
       <Layout title={siteConfig.name} description={note.data.description} keywords={labels}>
         <Header pathname={props.pathname} />
         <section className="note-container">
-          <h1 className="note-title">{note.data.title}</h1>
+          <Heading>{note.data.title}</Heading>
           <section className="note-contents">{note.contents}</section>
         </section>
         <Footer />
