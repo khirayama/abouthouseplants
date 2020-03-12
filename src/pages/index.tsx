@@ -13,7 +13,7 @@ export const config = { amp: true };
 export const data = {
   title: siteConfig.name,
   description: siteConfig.description,
-  keywords: [],
+  keywords: [] as string[],
 };
 
 type IndexPageProps = {
@@ -33,12 +33,12 @@ const styles = css`
 
 export default function IndexPage(props: IndexPageProps) {
   const intro = props.resource.intro;
-  const labels = props.resource.labels.map(label => label.data.title);
+  data.keywords = props.resource.labels.map(label => label.data.title);
 
   return (
     <>
       <style jsx>{styles}</style>
-      <Layout title={data.title} description={data.description} keywords={data.keywords}>
+      <Layout {...data}>
         <Header pathname={props.pathname} />
         <div className="featured-note-container">
           <FeaturedNote note={intro} />
