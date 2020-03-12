@@ -10,6 +10,12 @@ import { FeaturedNote } from '../components/FeaturedNote';
 
 export const config = { amp: true };
 
+export const data = {
+  title: siteConfig.name,
+  description: siteConfig.description,
+  keywords: [],
+};
+
 type IndexPageProps = {
   pathname: string;
   resource: {
@@ -32,7 +38,7 @@ export default function IndexPage(props: IndexPageProps) {
   return (
     <>
       <style jsx>{styles}</style>
-      <Layout title={siteConfig.name} description={intro.data.description} keywords={labels}>
+      <Layout title={data.title} description={data.description} keywords={data.keywords}>
         <Header pathname={props.pathname} />
         <div className="featured-note-container">
           <FeaturedNote note={intro} />
