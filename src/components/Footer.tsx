@@ -8,7 +8,7 @@ const styles = css`
   .footer {
     padding: 28px;
     text-align: center;
-    color: #aaa;
+    color: #666;
   }
   .copyright {
     font-size: 0.75rem;
