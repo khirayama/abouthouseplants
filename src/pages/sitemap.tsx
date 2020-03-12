@@ -8,7 +8,16 @@ import { resource } from '../utils/resource';
 import { Layout } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
+import { Heading } from '../components/Heading';
 import { Link } from '../components/Link';
+
+export const config = { amp: true };
+
+export const data = {
+  title: siteConfig.name,
+  description: siteConfig.description,
+  keywords: [],
+};
 
 type SitemapNode = {
   slug: string;
@@ -23,26 +32,26 @@ type PathMap = {
   };
 };
 
-export const data = {
-  title: siteConfig.name,
-  description: siteConfig.description,
-  keywords: [],
-};
-
-export const config = { amp: true };
-
 type SitemapPageProps = {
   pathname: string;
   sitemap: SitemapNode[];
 };
 
-const styles = css``;
+const styles = css`
+  .container {
+    padding: 24px;
+  }
+`;
 
 const listStyles = css`
   .list {
-    padding-left: 12px;
+    padding: 0 0 8px;
+  }
+  .list .list {
+    padding: 4px 0 4px 36px;
   }
   .list-item {
+    text-decoration: underline;
   }
 `;
 
@@ -55,7 +64,7 @@ export default function SitemapPage(props: SitemapPageProps) {
           {sitemap.map(site => {
             return (
               <li key={site.slug} className="list-item">
-                <Link to={site.slug}>{site.title}</Link>
+                <Link to={site.slug}>{site.title.replace(` | ${siteConfig.name}`, '')}</Link>
                 {renderList(site.children)}
               </li>
             );
@@ -74,7 +83,10 @@ export default function SitemapPage(props: SitemapPageProps) {
         keywords={['サイトマップ', siteConfig.name]}
       >
         <Header pathname={props.pathname} />
-        {renderList(props.sitemap)}
+        <div className="container">
+          <Heading>目次・サイトマップ</Heading>
+          {renderList(props.sitemap)}
+        </div>
         <Footer />
       </Layout>
     </>
@@ -84,7 +96,6 @@ export default function SitemapPage(props: SitemapPageProps) {
 SitemapPage.getInitialProps = (data: any): SitemapPageProps => {
   const sitemap: SitemapNode[] = [];
   const exportPathMap: PathMap = nextConfig.exportPathMap() as PathMap;
-  console.log(exportPathMap);
 
   const slugs = Object.keys(exportPathMap)
     .sort((a: string, b: string) => {
@@ -96,11 +107,6 @@ SitemapPage.getInitialProps = (data: any): SitemapPageProps => {
     if (!pathMap.query) {
       const { data } = require(`.${pathMap.page}`);
       const title = data ? data.title || '' : '';
-      console.log({
-        slug,
-        title,
-        children: [],
-      });
       sitemap.push({
         slug,
         title,
@@ -117,11 +123,6 @@ SitemapPage.getInitialProps = (data: any): SitemapPageProps => {
       const title = res.data.title;
       const sm = sitemap.filter(sm => sm.slug === resourceType)[0] || null;
       if (sm) {
-        console.log({
-          slug,
-          title,
-          children: [],
-        });
         sm.children.push({
           slug,
           title,
