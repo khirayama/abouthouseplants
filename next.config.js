@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 
 const glob = require('glob');
 
@@ -11,7 +10,7 @@ module.exports = {
       },
     });
   },
-  exportPathMap: async (defaultPathMap, { dev, dir, outDir, distDir, buildId }) => {
+  exportPathMap: () => {
     const exportPathMap = {};
 
     const resourceTypes = [];
