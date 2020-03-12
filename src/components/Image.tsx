@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-type AMPImageProps = {
+type ImageProps = {
   src: string;
 };
 
@@ -12,7 +12,7 @@ function extractName(imagePath: string): string {
   return tmp2.join('');
 }
 
-export function AMPImage(props: AMPImageProps) {
+export function Image(props: ImageProps) {
   const name = extractName(props.src);
   const metadata = require(`../../public/images/${name}.json`);
   const src = props.src.replace(name, `${name}.1x`);

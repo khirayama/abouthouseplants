@@ -207,8 +207,8 @@
     - 名前
     - 使用
     - 説明
-- `/notes` 記事一覧
-  - `/notes/:id` 個別記事
+- `/memos` 記事一覧
+  - `/memos/:id` 個別記事
     - ex: 基礎知識
       - 光、水、風
       - 置き場所
@@ -310,7 +310,7 @@
   - resource1_id
   - resource2_id
 
-- resource.type: plants / products / notes / labels
+- resource.type: plants / products / memos / labels
 - plants
   - contents
     - name(text)
@@ -333,7 +333,7 @@
   - attribute:
     - image_square(file)
     - image_rectangle(file)
-- notes
+- memos
   - contents
     - name(text)
     - body(markdown)
@@ -354,14 +354,14 @@
     - image_square(file)
     - image_rectangle(file)
 
-note: 言語、国によって差異がでるものがcontents。差異がでないものがattributes。
+memo: 言語、国によって差異がでるものがcontents。差異がでないものがattributes。
 
 ## 設計 2 / Modeling 2
 
 - resources
   - id
   - key
-  - type(note / product / plant)
+  - type(memo / product / plant)
 
 - resource_contents
   - id

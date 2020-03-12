@@ -1,12 +1,12 @@
 import * as React from 'react';
 import css from 'styled-jsx/css';
 
-import { Resource, NoteResourceData } from '../utils/resource';
+import { Resource, MemoResourceData } from '../utils/resource';
 import { Link } from '../components/Link';
-import { AMPImage } from '../components/AMPImage';
+import { Image } from '../components/Image';
 
-type FeaturedNoteProps = {
-  note: Resource<NoteResourceData>;
+type FeaturedMemoProps = {
+  memo: Resource<MemoResourceData>;
 };
 
 const styles = css`
@@ -42,19 +42,19 @@ const styles = css`
   }
 `;
 
-export function FeaturedNote(props: FeaturedNoteProps) {
-  const note = props.note;
+export function FeaturedMemo(props: FeaturedMemoProps) {
+  const memo = props.memo;
 
   return (
-    <Link to={note.slug}>
+    <Link to={memo.slug}>
       <style jsx>{styles}</style>
       <div className="frame">
         <div className="image-wrapper">
-          <AMPImage src="/images/a-close-up-of-a-leaf-on-white-background.jpeg" />
+          <Image src="/images/a-close-up-of-a-leaf-on-white-background.jpeg" />
         </div>
         <div className="info">
-          <p className="description">{note.data.description}</p>
-          <h3 className="title">{note.data.title}</h3>
+          <p className="description">{memo.data.description}</p>
+          <h3 className="title">{memo.data.title}</h3>
         </div>
       </div>
     </Link>

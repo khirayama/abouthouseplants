@@ -6,9 +6,9 @@ import grayMatter from 'gray-matter';
 import remark from 'remark';
 import remark2react from 'remark-react';
 
-import { AMPImage } from '../components/AMPImage';
+import { Image } from '../components/Image';
 
-export type NoteResourceData = {
+export type MemoResourceData = {
   labels: string[];
 };
 
@@ -38,7 +38,7 @@ export const resource = {
     const result = remark()
       .use(remark2react, {
         remarkReactComponents: {
-          img: AMPImage,
+          img: Image,
         },
       })
       .processSync(res.content);
