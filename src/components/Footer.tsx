@@ -8,10 +8,10 @@ const styles = css`
   .footer {
     padding: 28px;
     text-align: center;
+    color: #aaa;
   }
   .copyright {
     font-size: 0.75rem;
-    color: #aaa;
   }
   .link-list {
     font-size: 0.75rem;
