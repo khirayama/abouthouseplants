@@ -4,7 +4,7 @@ import css from 'styled-jsx/css';
 import nextConfig from '../../next.config';
 
 import { config as siteConfig } from '../config';
-import { resource } from '../utils/resource';
+import { Resource } from '../utils/Resource';
 import { Layout } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
@@ -119,7 +119,7 @@ SitemapPage.getInitialProps = (data: any): SitemapPageProps => {
     if (pathMap.query) {
       const tmp = pathMap.page.split('/');
       const resourceType = tmp[1];
-      const res = resource.get(resourceType, pathMap.query.id);
+      const res = Resource.findOne(resourceType, pathMap.query.id);
       const title = res.data.title;
       const sm = sitemap.filter(sm => sm.slug === resourceType)[0] || null;
       if (sm) {

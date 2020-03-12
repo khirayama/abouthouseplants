@@ -2,7 +2,7 @@ import * as React from 'react';
 import css from 'styled-jsx/css';
 
 import { config as siteConfig } from '../config';
-import { resource, Resource, MemoResourceData } from '../utils/resource';
+import { Resource, ResourceShape, MemoResourceData } from '../utils/Resource';
 import { Layout } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
@@ -19,8 +19,8 @@ export const data = {
 type IndexPageProps = {
   pathname: string;
   resource: {
-    intro: Resource<MemoResourceData>;
-    labels: Resource[];
+    intro: ResourceShape<MemoResourceData>;
+    labels: ResourceShape[];
   };
 };
 
@@ -50,8 +50,8 @@ export default function IndexPage(props: IndexPageProps) {
 }
 
 IndexPage.getInitialProps = (data: any): IndexPageProps => {
-  const intro = resource.get<MemoResourceData>('memos', 'introduction');
-  const labels = resource.getCollection('labels', intro.data.labels);
+  const intro = Resource.findOne<MemoResourceData>('memos', 'introduction');
+  const labels = Resource.find('labels', intro.data.labels);
 
   return {
     pathname: data.pathname,

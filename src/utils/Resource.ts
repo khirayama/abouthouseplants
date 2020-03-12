@@ -19,7 +19,7 @@ export type ResourceData<T> = {
   updated: string;
 } & T;
 
-export type Resource<T = {}> = {
+export type ResourceShape<T = {}> = {
   id: string;
   slug: string;
   type: string;
@@ -27,8 +27,8 @@ export type Resource<T = {}> = {
   contents: React.ReactNode;
 };
 
-export const resource = {
-  get: function<T = {}>(type: string, id: string): Resource<T> {
+export class Resource {
+  private static get<T = {}>(type: string, id: string): ResourceShape<T> {
     const mdPath = path.join(process.cwd(), 'resources', type, `${id}.md`);
     const doc = fs.readFileSync(mdPath, { encoding: 'utf-8' });
     const res = grayMatter(doc);
@@ -50,8 +50,13 @@ export const resource = {
       data,
       contents: result.contents,
     };
-  },
-  getCollection: function<T = {}>(type: string, ids: string[]): Resource<T>[] {
-    return ids.map(id => resource.get(type, id));
-  },
-};
+  }
+
+  public static find<T = {}>(type: string, ids: string[]): ResourceShape<T>[] {
+    return ids.map(id => Resource.get<T>(type, id));
+  }
+
+  public static findOne<T = {}>(type: string, id: string): ResourceShape<T> {
+    return Resource.get<T>(type, id);
+  }
+}
