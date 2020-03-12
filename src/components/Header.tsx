@@ -11,10 +11,15 @@ type HeaderProps = {
 const styles = css`
   .header {
     padding: 28px;
-    text-align: center;
   }
   .heading {
     font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-family: serif;
+    text-align: center;
+  }
+  .sub-heading {
+    font-size: 1rem;
     letter-spacing: 2px;
     font-family: serif;
   }
@@ -30,7 +35,7 @@ export function Header(props: HeaderProps) {
             <Link to="/">{config.name}</Link>
           </h1>
         ) : (
-          <h2 className="heading">
+          <h2 className="sub-heading">
             <Link to="/">{config.name}</Link>
           </h2>
         )}
