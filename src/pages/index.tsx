@@ -11,7 +11,7 @@ import { FeaturedMemo } from '../components/FeaturedMemo';
 export const config = { amp: true };
 
 export const data = {
-  title: siteConfig.name,
+  title: `${siteConfig.name} | ${siteConfig.description}`,
   description: siteConfig.description,
   keywords: [] as string[],
 };
