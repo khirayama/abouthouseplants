@@ -101,6 +101,7 @@ export const resetStyles = css.global`
   html {
     font-family: sans-serif;
     font-size: 18px;
+    text-align: justify;
     color: #222222;
   }
 
