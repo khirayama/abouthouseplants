@@ -2,6 +2,8 @@ import * as React from 'react';
 import css from 'styled-jsx/css';
 import Head from 'next/head';
 
+import { resetStyles } from '../styles/resetStyles';
+
 type LayoutProps = {
   title: string;
   description: string;
@@ -19,6 +21,7 @@ const styles = css`
 export function Layout(props: LayoutProps) {
   return (
     <div>
+      <style jsx>{resetStyles}</style>
       <style jsx>{styles}</style>
       <Head>
         <meta charSet="utf-8" />
