@@ -6,7 +6,35 @@ import grayMatter from 'gray-matter';
 import remark from 'remark';
 import remark2react from 'remark-react';
 
-import { Image } from '../components/Image';
+import { RemarkImage } from '../components/RemarkImage';
+import { RemarkHeading2, RemarkHeading3 } from '../components/RemarkHeading';
+import { RemarkParagraph } from '../components/RemarkParagraph';
+import { RemarkAnchor } from '../components/RemarkAnchor';
+import { RemarkList, RemarkListItem } from '../components/RemarkList';
+import {
+  RemarkTable,
+  RemarkTableBody,
+  RemarkTableHead,
+  RemarkTableRow,
+  RemarkTableHeader,
+  RemarkTableData,
+} from '../components/RemarkTable';
+
+const components = {
+  h2: RemarkHeading2,
+  h3: RemarkHeading3,
+  img: RemarkImage,
+  p: RemarkParagraph,
+  ul: RemarkList,
+  li: RemarkListItem,
+  table: RemarkTable,
+  thead: RemarkTableHead,
+  tbody: RemarkTableBody,
+  tr: RemarkTableRow,
+  th: RemarkTableHeader,
+  td: RemarkTableData,
+  a: RemarkAnchor,
+};
 
 export type MemoResourceData = {
   labels: string[];
@@ -37,9 +65,7 @@ export class Resource {
 
     const result = remark()
       .use(remark2react, {
-        remarkReactComponents: {
-          img: Image,
-        },
+        remarkReactComponents: components,
       })
       .processSync(res.content);
 

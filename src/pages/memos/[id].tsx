@@ -14,7 +14,6 @@ type PostPageProps = {
   pathname: string;
   resource: {
     memo: ResourceShape<MemoResourceData>;
-    labels: ResourceShape[];
   };
 };
 
@@ -30,12 +29,11 @@ const styles = css`
 
 export default function PostPage(props: PostPageProps) {
   const memo = props.resource.memo;
-  const labels = props.resource.labels.map(label => label.data.title);
 
   return (
     <>
       <style jsx>{styles}</style>
-      <Layout title={siteConfig.name} description={memo.data.description} keywords={labels}>
+      <Layout title={siteConfig.name} description={memo.data.description} keywords={[]}>
         <Header pathname={props.pathname} />
         <section className="memo-container">
           <Heading>{memo.data.title}</Heading>
@@ -50,13 +48,11 @@ export default function PostPage(props: PostPageProps) {
 PostPage.getInitialProps = (data: any): PostPageProps => {
   const id = data.query.id;
   const memo = Resource.findOne<MemoResourceData>('memos', id);
-  const labels = Resource.find('labels', memo.data.labels);
 
   return {
     pathname: data.pathname,
     resource: {
       memo,
-      labels,
     },
   };
 };
