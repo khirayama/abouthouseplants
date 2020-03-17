@@ -102,11 +102,12 @@ SitemapPage.getInitialProps = (data: any): SitemapPageProps => {
       return a.split('/').length - b.split('/').length;
     })
     .filter(slug => slug !== 'sitemap');
+
   slugs.forEach((slug: string) => {
     const pathMap = exportPathMap[slug];
     if (!pathMap.query) {
       const { data } = require(`.${pathMap.page}`);
-      const title = data ? data.title || '' : '';
+      const title = data?.title || '';
       sitemap.push({
         slug,
         title,
@@ -114,6 +115,7 @@ SitemapPage.getInitialProps = (data: any): SitemapPageProps => {
       });
     }
   });
+
   slugs.forEach((slug: string) => {
     const pathMap = exportPathMap[slug];
     if (pathMap.query) {
@@ -131,6 +133,10 @@ SitemapPage.getInitialProps = (data: any): SitemapPageProps => {
       }
     }
   });
+
+  // Change Order
+  sitemap.sort(sm => (sm.slug === '/' ? -1 : 0));
+
   return {
     pathname: data.pathname,
     sitemap,
