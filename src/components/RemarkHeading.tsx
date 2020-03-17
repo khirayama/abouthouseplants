@@ -16,7 +16,9 @@ export function RemarkHeading2(props: RemarkHeading2Props) {
   return (
     <>
       <style jsx>{heading2Styles}</style>
-      <h2 className="remark-heading2">{props.children}</h2>
+      <h2 {...props} className="remark-heading2">
+        {props.children}
+      </h2>
     </>
   );
 }
@@ -36,7 +38,9 @@ export function RemarkHeading3(props: RemarkHeading3Props) {
   return (
     <>
       <style jsx>{heading3Styles}</style>
-      <h3 className="remark-heading3">{props.children}</h3>
+      <h3 {...props} className="remark-heading3">
+        {props.children}
+      </h3>
     </>
   );
 }
