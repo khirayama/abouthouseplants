@@ -12,7 +12,7 @@
     "build": "next build",
     "start": "next start",
     "build:assets": "ts-node --project tsconfig.bin.json bin/asset.ts",
-    "export": "next build && next export",
+    "export": "next export",
     "check": "npx npm-check-updates"
   },
   "dependencies": {
