@@ -4,7 +4,9 @@ import * as path from 'path';
 import * as React from 'react';
 import grayMatter from 'gray-matter';
 import remark from 'remark';
-import remark2react from 'remark-react';
+import remarkReact from 'remark-react';
+import remarkSlug from 'remark-slug';
+import remarkAutolinkHeadings from 'remark-autolink-headings';
 
 import { RemarkImage } from '../components/RemarkImage';
 import { RemarkHeading2, RemarkHeading3 } from '../components/RemarkHeading';
@@ -20,7 +22,7 @@ import {
   RemarkTableData,
 } from '../components/RemarkTable';
 
-const components = {
+const remarkReactComponents = {
   h2: RemarkHeading2,
   h3: RemarkHeading3,
   img: RemarkImage,
@@ -60,8 +62,15 @@ export class Resource {
     const slug = `/${type}/${id}`;
 
     const result = remark()
-      .use(remark2react, {
-        remarkReactComponents: components,
+      .use(remarkSlug)
+      .use(remarkAutolinkHeadings, {
+        behavior: 'wrap',
+      })
+      .use(remarkReact, {
+        sanitize: {
+          clobberPrefix: '',
+        },
+        remarkReactComponents,
       })
       .processSync(res.content);
 
