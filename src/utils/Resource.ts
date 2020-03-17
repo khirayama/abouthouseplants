@@ -7,6 +7,7 @@ import remark from 'remark';
 import remarkReact from 'remark-react';
 import remarkSlug from 'remark-slug';
 import remarkAutolinkHeadings from 'remark-autolink-headings';
+import remarkTOC from 'remark-toc';
 
 import { RemarkImage } from '../components/RemarkImage';
 import { RemarkHeading2, RemarkHeading3 } from '../components/RemarkHeading';
@@ -65,6 +66,9 @@ export class Resource {
       .use(remarkSlug)
       .use(remarkAutolinkHeadings, {
         behavior: 'wrap',
+      })
+      .use(remarkTOC, {
+        heading: '目次',
       })
       .use(remarkReact, {
         sanitize: {
