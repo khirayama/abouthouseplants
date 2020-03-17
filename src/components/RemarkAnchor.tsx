@@ -4,7 +4,7 @@ import css from 'styled-jsx/css';
 const styles = css`
   .remark-anchor {
     text-decoration: underline;
-    margin: 0 4px;
+    margin: 0 2px;
   }
 `;
 
