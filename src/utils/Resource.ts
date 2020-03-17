@@ -36,10 +36,6 @@ const components = {
   a: RemarkAnchor,
 };
 
-export type MemoResourceData = {
-  labels: string[];
-};
-
 export type ResourceData<T> = {
   title: string;
   description: string;
