@@ -1,12 +1,12 @@
 import * as React from 'react';
 import css from 'styled-jsx/css';
 
-import { ResourceShape, MemoResourceData } from '../utils/Resource';
+import { ResourceShape } from '../utils/Resource';
 import { Link } from '../components/Link';
 import { Image } from '../components/Image';
 
 type FeaturedMemoProps = {
-  memo: ResourceShape<MemoResourceData>;
+  memo: ResourceShape;
 };
 
 const styles = css`

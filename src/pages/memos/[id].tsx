@@ -2,7 +2,7 @@ import * as React from 'react';
 import css from 'styled-jsx/css';
 
 import { config as siteConfig } from '../../config';
-import { Resource, ResourceShape, MemoResourceData } from '../../utils/Resource';
+import { Resource, ResourceShape } from '../../utils/Resource';
 import { Layout } from '../../components/Layout';
 import { Header } from '../../components/Header';
 import { Heading } from '../../components/Heading';
@@ -13,7 +13,7 @@ export const config = { amp: true };
 type PostPageProps = {
   pathname: string;
   resource: {
-    memo: ResourceShape<MemoResourceData>;
+    memo: ResourceShape;
   };
 };
 
@@ -47,7 +47,7 @@ export default function PostPage(props: PostPageProps) {
 
 PostPage.getInitialProps = (data: any): PostPageProps => {
   const id = data.query.id;
-  const memo = Resource.findOne<MemoResourceData>('memos', id);
+  const memo = Resource.findOne('memos', id);
 
   return {
     pathname: data.pathname,
