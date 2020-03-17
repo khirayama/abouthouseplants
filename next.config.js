@@ -52,7 +52,7 @@ module.exports = {
     pagePaths.forEach(pagePath => {
       const pageName = pagePath.split('/')[1];
       if (pagePath.indexOf('[id]') === -1) {
-        exportPathMap[pageName] = { page: `/${pageName}` };
+        exportPathMap[pageName.replace('index', '/')] = { page: `/${pageName}` };
       }
     });
 
