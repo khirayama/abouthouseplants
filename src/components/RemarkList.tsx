@@ -5,6 +5,9 @@ const listStyles = css`
   .remark-list {
     margin: 8px 0 24px 1rem;
   }
+  .remark-list :global(.remark-list) {
+    margin: 8px 0 8px 1rem;
+  }
 `;
 
 type RemarkListProps = {
@@ -35,6 +38,9 @@ const listItemStyles = css`
     height: 0.5rem;
     border-radius: 50%;
     background: #666666;
+  }
+  .remark-list-item :global(.remark-paragraph) {
+    margin: 0;
   }
 `;
 
