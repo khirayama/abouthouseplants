@@ -42,7 +42,7 @@ export const resetStyles = css.global`
     outline: 0;
     border: 0;
     border-radius: 0;
-    font-weight: inherit;
+    font-weight: normal;
     font-style: normal;
     font-family: inherit;
     vertical-align: baseline;
