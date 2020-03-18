@@ -1,5 +1,6 @@
 import * as React from 'react';
 import css from 'styled-jsx/css';
+import dayjs from 'dayjs';
 
 import { config as siteConfig } from '../../config';
 import { Resource, ResourceShape } from '../../utils/Resource';
@@ -22,6 +23,15 @@ const styles = css`
     padding: 24px;
   }
 
+  .date {
+    font-size: 0.75rem;
+    font-family: serif;
+    color: #666666;
+  }
+  .date-label {
+    margin-right: 0.5rem;
+  }
+
   .memo-contents {
     padding: 24px 0;
   }
@@ -37,6 +47,18 @@ export default function PostPage(props: PostPageProps) {
         <Header pathname={props.pathname} />
         <section className="container">
           <Heading>{memo.data.title}</Heading>
+          <div className="date">
+            <span className="date-label">作成日</span>
+            <time dateTime={memo.data.created}>
+              {dayjs(memo.data.created).format('YYYY年MM月DD日')}
+            </time>
+          </div>
+          <div className="date">
+            <span className="date-label">最終更新日</span>
+            <time dateTime={memo.data.updated}>
+              {dayjs(memo.data.updated).format('YYYY年MM月DD日')}
+            </time>
+          </div>
           <section className="memo-contents">{memo.contents}</section>
         </section>
         <Footer />

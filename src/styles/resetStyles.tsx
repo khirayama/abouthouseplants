@@ -19,6 +19,7 @@ export const resetStyles = css.global`
   ul,
   li,
   label,
+  time,
   input,
   textarea,
   form,
