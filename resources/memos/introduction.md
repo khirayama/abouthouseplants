@@ -2,7 +2,7 @@
 title: '観葉植物入門'
 description: '観葉植物入門。基礎知識、選び方、育て方、手入れ、楽しみ方。'
 created: '2020-03-12T18:00:00.000+09:00'
-updated: '2020-03-18T18:00:00.000+09:00'
+updated: '2020-03-19T9:00:00.000+09:00'
 ---
 
 <!-- Linked Articles
@@ -200,12 +200,17 @@ updated: '2020-03-18T18:00:00.000+09:00'
 |増やし方|実生|||
 |増やし方|取木|||
 
-## 参考文献
+## 参考資料
+
+### 参考書籍
+
+- [はじめての観葉植物の手入れと育て方 (ナツメ社のGarden Books) | 谷亀 高広, 橋詰 二三夫 |本 | 通販 | Amazon](https://www.amazon.co.jp/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E8%A6%B3%E8%91%89%E6%A4%8D%E7%89%A9%E3%81%AE%E6%89%8B%E5%85%A5%E3%82%8C%E3%81%A8%E8%82%B2%E3%81%A6%E6%96%B9-%E3%83%8A%E3%83%84%E3%83%A1%E7%A4%BE%E3%81%AEGarden-Books-%E8%B0%B7%E4%BA%80-%E9%AB%98%E5%BA%83/dp/4816344616/)
+- [SOLSO FARM BOOK インドアグリーン (実用単行本) | SOLSO FARM |本 | 通販 | Amazon](https://www.amazon.co.jp/SOLSO-FARM-BOOK-%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A2%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3-%E5%AE%9F%E7%94%A8%E5%8D%98%E8%A1%8C%E6%9C%AC/dp/4093108900/)
+
+### 参考リンク
 
 - [観葉植物 - Wikipedia](https://ja.wikipedia.org/wiki/%E8%A6%B3%E8%91%89%E6%A4%8D%E7%89%A9)
 - [植物群系とその分布](http://www.keirinkan.com/kori/kori_biology/kori_biology_2_kaitei/contents/bi-2/4-bu/4-3-5.htm)
-- [はじめての観葉植物の手入れと育て方 (ナツメ社のGarden Books) | 谷亀 高広, 橋詰 二三夫 |本 | 通販 | Amazon](https://www.amazon.co.jp/%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E8%A6%B3%E8%91%89%E6%A4%8D%E7%89%A9%E3%81%AE%E6%89%8B%E5%85%A5%E3%82%8C%E3%81%A8%E8%82%B2%E3%81%A6%E6%96%B9-%E3%83%8A%E3%83%84%E3%83%A1%E7%A4%BE%E3%81%AEGarden-Books-%E8%B0%B7%E4%BA%80-%E9%AB%98%E5%BA%83/dp/4816344616/)
-- [SOLSO FARM BOOK インドアグリーン (実用単行本) | SOLSO FARM |本 | 通販 | Amazon](https://www.amazon.co.jp/SOLSO-FARM-BOOK-%E3%82%A4%E3%83%B3%E3%83%89%E3%82%A2%E3%82%B0%E3%83%AA%E3%83%BC%E3%83%B3-%E5%AE%9F%E7%94%A8%E5%8D%98%E8%A1%8C%E6%9C%AC/dp/4093108900/)
 - [オフィスにおける観葉植物によるメンタルヘルスケアと知的生産性の向上[PDF]](http://okunairyokka.jp/data/report2.pdf)
 - [脳波反応からみた道路植栽による騒音感の緩和に関する研究](https://www.jstage.jst.go.jp/article/jila1994/59/3/59_3_214/_article/-char/ja/)
 - [観葉植物,花,香りが人間に及ぼす生理・心理的効果の脳波およびSD法による解析](https://www.jstage.jst.go.jp/article/aija/63/509/63_KJ00004222651/_article/-char/ja/)
