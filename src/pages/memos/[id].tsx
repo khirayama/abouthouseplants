@@ -18,7 +18,7 @@ type PostPageProps = {
 };
 
 const styles = css`
-  .memo-container {
+  .container {
     padding: 24px;
   }
 
@@ -35,7 +35,7 @@ export default function PostPage(props: PostPageProps) {
       <style jsx>{styles}</style>
       <Layout title={siteConfig.name} description={memo.data.description} keywords={[]}>
         <Header pathname={props.pathname} />
-        <section className="memo-container">
+        <section className="container">
           <Heading>{memo.data.title}</Heading>
           <section className="memo-contents">{memo.contents}</section>
         </section>

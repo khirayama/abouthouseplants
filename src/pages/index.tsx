@@ -24,9 +24,11 @@ type IndexPageProps = {
 };
 
 const styles = css`
+  .container {
+    padding: 24px;
+  }
   .featured-memo-container {
     text-align: center;
-    padding: 24px;
   }
 `;
 
@@ -38,8 +40,10 @@ export default function IndexPage(props: IndexPageProps) {
       <style jsx>{styles}</style>
       <Layout {...data}>
         <Header pathname={props.pathname} />
-        <div className="featured-memo-container">
-          <FeaturedMemo memo={intro} />
+        <div className="container">
+          <div className="featured-memo-container">
+            <FeaturedMemo memo={intro} />
+          </div>
         </div>
         <Footer />
       </Layout>
