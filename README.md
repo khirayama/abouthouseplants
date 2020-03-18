@@ -3,8 +3,8 @@
 - [ ] resource.findをリデザイン
 - [ ] thumnail fieldsを追加
 - [ ] 画像の縦横比固定
-- [ ] Markdownのスタイル
-- [ ] Markdownにanchorリンク
+- [x] Markdownのスタイル
+- [x] Markdownにanchorリンク
 - [x] sitemap作成
 - [x] GAとSearch console連携
 - [x] Rename note to memo
