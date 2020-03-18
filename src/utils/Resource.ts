@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
+import glob from 'glob';
 import * as React from 'react';
 import grayMatter from 'gray-matter';
 import remark from 'remark';
@@ -87,8 +88,19 @@ export class Resource {
     };
   }
 
-  public static find<T = {}>(type: string, ids: string[]): ResourceShape<T>[] {
-    return ids.map(id => Resource.get<T>(type, id));
+  public static find<T = {}>(type: string, ids?: string[]): ResourceShape<T>[] {
+    if (ids) {
+      return ids.map(id => Resource.get<T>(type, id));
+    } else {
+      const rootPath = path.join(process.cwd(), 'resources', type);
+      const mdPaths = glob.sync(`${rootPath}/**/*.md`);
+      return mdPaths.map((mdPath: string) => {
+        const tmp = mdPath.split('/');
+        const type = tmp[tmp.length - 2];
+        const id = tmp[tmp.length - 1].replace('.md', '');
+        return Resource.get<T>(type, id);
+      });
+    }
   }
 
   public static findOne<T = {}>(type: string, id: string): ResourceShape<T> {
