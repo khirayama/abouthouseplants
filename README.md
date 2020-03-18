@@ -1,8 +1,8 @@
 ## TODO
 
-- [ ] resource.findをリデザイン
 - [ ] thumnail fieldsを追加
 - [ ] 画像の縦横比固定
+- [x] resource.findをリデザイン
 - [x] Markdownのスタイル
 - [x] Markdownにanchorリンク
 - [x] sitemap作成
