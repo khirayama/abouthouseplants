@@ -3,7 +3,7 @@ import css from 'styled-jsx/css';
 
 const heading2Styles = css`
   .remark-heading2 {
-    margin: 36px 0 24px;
+    margin: 64px 0 24px;
     font-size: 1.25rem;
   }
 `;
