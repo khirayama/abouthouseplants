@@ -1,8 +1,10 @@
 ## TODO
 
+- [ ] favicon追加
+- [ ] パンくず追加
 - [ ] thumnail fieldsを追加
 - [ ] 画像の縦横比固定
-- [ ] 日付の追加
+- [x] 日付の追加
 - [x] resource.findをリデザイン
 - [x] Markdownのスタイル
 - [x] Markdownにanchorリンク
