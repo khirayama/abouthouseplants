@@ -62,14 +62,10 @@ export default function SitemapPage(props: SitemapPageProps) {
   return (
     <>
       <style jsx>{styles}</style>
-      <Layout
-        title={`サイトマップ | ${siteConfig.name}`}
-        description={`${siteConfig.name}のサイトマップ`}
-        keywords={['サイトマップ', siteConfig.name]}
-      >
+      <Layout title={data.title} description={data.description} keywords={data.keywords}>
         <Header pathname={props.pathname} />
         <div className="container">
-          <Heading>目次・サイトマップ</Heading>
+          <Heading>{data.title}</Heading>
           {renderList(props.sitemap)}
         </div>
         <Footer />

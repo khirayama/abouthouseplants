@@ -3,6 +3,7 @@ import css from 'styled-jsx/css';
 
 import { config } from '../config';
 import { Link } from '../components/Link';
+import { data as sitemapData } from '../pages/sitemap';
 
 const styles = css`
   .footer {
@@ -28,7 +29,7 @@ export function Footer() {
       <footer className="footer">
         <ul className="link-list">
           <li className="link-list-item">
-            <Link to="/sitemap">サイトマップ</Link>
+            <Link to="/sitemap">{sitemapData.title}</Link>
           </li>
         </ul>
         <small className="copyright">&copy; 2020 {config.name} All rights reserved.</small>

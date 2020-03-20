@@ -1,21 +1,13 @@
 import * as path from 'path';
 import glob from 'glob';
 
-import nextConfig from '../../next.config';
-
-import { Resource } from '../utils/Resource';
-
-type PathMap = {
-  [slug: string]: {
-    page: string;
-    query?: { id: string };
-  };
-};
+import { Resource } from './Resource';
 
 export type SitemapNode = {
   slug: string;
   name: string;
   title: string;
+  file: string;
   children: SitemapNode[];
 };
 
@@ -24,48 +16,6 @@ function isTemplate(pagePath: string): boolean {
 }
 
 export function generateSitemap(): SitemapNode[] {
-  // const sitemap: SitemapNode[] = [];
-  // const exportPathMap: PathMap = nextConfig.exportPathMap() as PathMap;
-  //
-  // const slugs = Object.keys(exportPathMap)
-  //   .sort((a: string, b: string) => {
-  //     return a.split('/').length - b.split('/').length;
-  //   })
-  //   .filter(slug => slug !== 'sitemap');
-  //
-  // slugs.forEach((slug: string) => {
-  //   const pathMap = exportPathMap[slug];
-  //   if (!pathMap.query) {
-  //     const { data } = require(`.${pathMap.page}`);
-  //     const title = data?.title || '';
-  //     sitemap.push({
-  //       slug,
-  //       title,
-  //       children: [],
-  //     });
-  //   }
-  // });
-  //
-  // slugs.forEach((slug: string) => {
-  //   const pathMap = exportPathMap[slug];
-  //   if (pathMap.query) {
-  //     const tmp = pathMap.page.split('/');
-  //     const resourceType = tmp[1];
-  //     const res = Resource.findOne(resourceType, pathMap.query.id);
-  //     const title = res.data.title;
-  //     const sm = sitemap.filter(sm => sm.slug === resourceType)[0] || null;
-  //     if (sm) {
-  //       sm.children.push({
-  //         slug,
-  //         title,
-  //         children: [],
-  //       });
-  //     }
-  //   }
-  // });
-  // // Change Order
-  // sitemap.sort(sm => (sm.slug === '/' ? -1 : 0));
-
   const sitemap: SitemapNode[] = [];
 
   /* Page */
@@ -81,11 +31,13 @@ export function generateSitemap(): SitemapNode[] {
         .split('/')
         .filter(tmp => !!tmp)[0];
       const { data } = require(`../pages/${pageName}`);
+      const slug = ['', pageName].join('/');
 
       sitemap.push({
-        slug: ['', pageName].join('/'),
+        slug,
         name: pageName,
         title: data.title,
+        file: slug,
         children: [],
       });
     } else {
@@ -111,6 +63,7 @@ export function generateSitemap(): SitemapNode[] {
           slug,
           name: resourceId,
           title: resource.data.title,
+          file: slug,
           children: [],
         });
       }
