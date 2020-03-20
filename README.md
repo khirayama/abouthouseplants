@@ -1,10 +1,12 @@
 ## TODO
 
-- [ ] パンくず追加
 - [ ] SEO対策
+  - [ ] title / description / keywords
+  - [ ] json+ld
 - [ ] favicon追加
 - [ ] thumnail fieldsを追加
 - [ ] 画像の縦横比固定
+- [x] パンくず追加
 - [x] 日付の追加
 - [x] resource.findをリデザイン
 - [x] Markdownのスタイル
