@@ -49,7 +49,7 @@ export default function SitemapPage(props: SitemapPageProps) {
           {sitemap.map(site => {
             return (
               <li key={site.slug} className="list-item">
-                <Link to={site.slug}>{site.title.replace(` | ${siteConfig.name}`, '')}</Link>
+                <Link to={site.slug}>{site.title}</Link>
                 {renderList(site.children)}
               </li>
             );
