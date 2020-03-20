@@ -60,7 +60,7 @@ LabelsPage.getInitialProps = (data: any): LabelsPageProps => {
   const memos = Resource.find('memos');
 
   return {
-    pathname: data.pathname,
+    pathname: data.req.url,
     resource: {
       memos,
     },

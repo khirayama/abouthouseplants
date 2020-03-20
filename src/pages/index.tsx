@@ -55,7 +55,7 @@ IndexPage.getInitialProps = (data: any): IndexPageProps => {
   const intro = Resource.findOne('memos', 'introduction');
 
   return {
-    pathname: data.pathname,
+    pathname: data.req.url,
     resource: {
       intro,
     },

@@ -76,7 +76,7 @@ export default function SitemapPage(props: SitemapPageProps) {
 
 SitemapPage.getInitialProps = (data: any): SitemapPageProps => {
   return {
-    pathname: data.pathname,
+    pathname: data.req.url,
     sitemap: generateSitemap().filter(sm => sm.slug !== '/sitemap'),
   };
 };

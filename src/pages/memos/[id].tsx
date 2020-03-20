@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 
 import { config as siteConfig } from '../../config';
 import { Resource, ResourceShape } from '../../utils/Resource';
+import { generateSitemap, SitemapNode } from '../../utils/sitemap';
 import { Layout } from '../../components/Layout';
 import { Header } from '../../components/Header';
 import { Heading } from '../../components/Heading';
@@ -14,6 +15,7 @@ export const config = { amp: true };
 
 type PostPageProps = {
   pathname: string;
+  sitemap: SitemapNode[];
   resource: {
     memo: ResourceShape;
   };
@@ -46,7 +48,7 @@ export default function PostPage(props: PostPageProps) {
       <style jsx>{styles}</style>
       <Layout title={siteConfig.name} description={memo.data.description} keywords={[]}>
         <Header pathname={props.pathname} />
-        <Breadcrumb pathname={props.pathname} />
+        <Breadcrumb pathname={props.pathname} sitemap={props.sitemap} />
         <section className="container">
           <Heading>{memo.data.title}</Heading>
           <div className="date">
@@ -70,7 +72,8 @@ PostPage.getInitialProps = (data: any): PostPageProps => {
   const memo = Resource.findOne('memos', id);
 
   return {
-    pathname: data.pathname,
+    pathname: data.req.url,
+    sitemap: generateSitemap(),
     resource: {
       memo,
     },
