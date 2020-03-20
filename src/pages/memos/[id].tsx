@@ -7,6 +7,7 @@ import { Resource, ResourceShape } from '../../utils/Resource';
 import { Layout } from '../../components/Layout';
 import { Header } from '../../components/Header';
 import { Heading } from '../../components/Heading';
+import { Breadcrumb } from '../../components/Breadcrumb';
 import { Footer } from '../../components/Footer';
 
 export const config = { amp: true };
@@ -45,6 +46,7 @@ export default function PostPage(props: PostPageProps) {
       <style jsx>{styles}</style>
       <Layout title={siteConfig.name} description={memo.data.description} keywords={[]}>
         <Header pathname={props.pathname} />
+        <Breadcrumb pathname={props.pathname} />
         <section className="container">
           <Heading>{memo.data.title}</Heading>
           <div className="date">
