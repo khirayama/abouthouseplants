@@ -1,7 +1,8 @@
 ## TODO
 
-- [ ] favicon追加
 - [ ] パンくず追加
+- [ ] SEO対策
+- [ ] favicon追加
 - [ ] thumnail fieldsを追加
 - [ ] 画像の縦横比固定
 - [x] 日付の追加
