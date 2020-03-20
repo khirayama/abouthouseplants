@@ -1,10 +1,8 @@
 import * as React from 'react';
 import css from 'styled-jsx/css';
 
-import nextConfig from '../../next.config';
-
 import { config as siteConfig } from '../config';
-import { Resource } from '../utils/Resource';
+import { generateSitemap, SitemapNode } from '../utils/sitemap';
 import { Layout } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
@@ -14,22 +12,9 @@ import { Link } from '../components/Link';
 export const config = { amp: true };
 
 export const data = {
-  title: siteConfig.name,
+  title: '目次・サイトマップ',
   description: siteConfig.description,
   keywords: [],
-};
-
-type SitemapNode = {
-  slug: string;
-  title: string;
-  children: SitemapNode[];
-};
-
-type PathMap = {
-  [slug: string]: {
-    page: string;
-    query?: { id: string };
-  };
 };
 
 type SitemapPageProps = {
@@ -94,51 +79,8 @@ export default function SitemapPage(props: SitemapPageProps) {
 }
 
 SitemapPage.getInitialProps = (data: any): SitemapPageProps => {
-  const sitemap: SitemapNode[] = [];
-  const exportPathMap: PathMap = nextConfig.exportPathMap() as PathMap;
-
-  const slugs = Object.keys(exportPathMap)
-    .sort((a: string, b: string) => {
-      return a.split('/').length - b.split('/').length;
-    })
-    .filter(slug => slug !== 'sitemap');
-
-  slugs.forEach((slug: string) => {
-    const pathMap = exportPathMap[slug];
-    if (!pathMap.query) {
-      const { data } = require(`.${pathMap.page}`);
-      const title = data?.title || '';
-      sitemap.push({
-        slug,
-        title,
-        children: [],
-      });
-    }
-  });
-
-  slugs.forEach((slug: string) => {
-    const pathMap = exportPathMap[slug];
-    if (pathMap.query) {
-      const tmp = pathMap.page.split('/');
-      const resourceType = tmp[1];
-      const res = Resource.findOne(resourceType, pathMap.query.id);
-      const title = res.data.title;
-      const sm = sitemap.filter(sm => sm.slug === resourceType)[0] || null;
-      if (sm) {
-        sm.children.push({
-          slug,
-          title,
-          children: [],
-        });
-      }
-    }
-  });
-
-  // Change Order
-  sitemap.sort(sm => (sm.slug === '/' ? -1 : 0));
-
   return {
     pathname: data.pathname,
-    sitemap,
+    sitemap: generateSitemap().filter(sm => sm.slug !== '/sitemap'),
   };
 };
