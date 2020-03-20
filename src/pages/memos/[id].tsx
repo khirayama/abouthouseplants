@@ -49,15 +49,11 @@ export default function PostPage(props: PostPageProps) {
           <Heading>{memo.data.title}</Heading>
           <div className="date">
             <span className="date-label">作成日</span>
-            <time dateTime={memo.data.created}>
-              {dayjs(memo.data.created).format('YYYY年MM月DD日')}
-            </time>
+            <time dateTime={memo.data.created}>{dayjs(memo.data.created).format('YYYY年MM月DD日')}</time>
           </div>
           <div className="date">
             <span className="date-label">最終更新日</span>
-            <time dateTime={memo.data.updated}>
-              {dayjs(memo.data.updated).format('YYYY年MM月DD日')}
-            </time>
+            <time dateTime={memo.data.updated}>{dayjs(memo.data.updated).format('YYYY年MM月DD日')}</time>
           </div>
           <section className="memo-contents">{memo.contents}</section>
         </section>
