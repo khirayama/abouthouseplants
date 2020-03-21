@@ -12,21 +12,25 @@
   - 構造化データ
     - json+ldを使用し、microdataは使用しない
     - json+ldでは、breadcrumbをサポートする
+    - json+ldでは、articleをサポートする
   - サイトマップとrobots.tx
     - xml形式を使用
     - lastmodは必須
     - robots.txtにSitemapフィールド必須
-    - 更新時はpingを送信する
+    - 更新時はpingを送信する(GitHub Actionsで実行する)
 
 - Refs
   - [構造化データに関するガイドラインに準拠する  |  Google 検索デベロッパー ガイド  |  Google Developers](https://developers.google.com/search/docs/guides/sd-policies)
+  - [構造化データ マークアップ支援ツール](https://www.google.com/webmasters/markup-helper/u/0/)
+  - [構造化データ テストツール](https://search.google.com/structured-data/testing-tool/u/0/?hl=ja)
+  - [パンくずリスト  |  Google 検索デベロッパー ガイド  |  Google Developers](https://developers.google.com/search/docs/data-types/breadcrumb?hl=ja)
   - [サイトマップの作成と送信 - Search Console ヘルプ](https://support.google.com/webmasters/answer/183668)
 
 - TODO
   - [ ] title / headingの見直し
   - [ ] description / keywordsを設定し直す
-  - [ ] json+ldでbreadcrumbを追加
   - [ ] json+ldでサポートする内容を精査する
+  - [x] json+ldでbreadcrumbを追加
   - [x] robots.txtを作成
   - [x] robots.txtにSitemapフィールドを含む
   - [x] sitemapにlastmodを追加
@@ -39,7 +43,7 @@
 ### クリエイティブ
 
 - TODO
-  - [ ] favicon作成
+  - [ ] ロゴ / favicon作成
   - [ ] thumnailの作成
   - [ ] 画像の縦横比固定
   - [ ] アクセシビリティの修正
