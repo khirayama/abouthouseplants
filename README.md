@@ -23,11 +23,11 @@
 - TODO
   - [ ] title / description / keywordsを設定し直す
   - [ ] json+ldを追加
-  - [ ] sitemapにlastmodを追加
-  - [ ] robots.txtを作成
-  - [ ] robots.txtにSitemapフィールドを含む
   - [ ] googleへのpingをgithub actionsに追加
   - [ ] json+ldでサポートする内容を精査する
+  - [x] robots.txtを作成
+  - [x] robots.txtにSitemapフィールドを含む
+  - [x] sitemapにlastmodを追加
   - [x] パンくず追加
   - [x] 日付の追加
   - [x] sitemap作成
@@ -59,6 +59,7 @@
 
 - TODO
   - [ ] thumnailフィールドを追加
+  - [x] sitemap.xmlを `_document` で生成する
   - [x] resource.findをリデザイン
   - [x] notesからmemosに変更
   - [x] assetsのpathを自動で回すように
