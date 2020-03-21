@@ -1,6 +1,10 @@
+import * as fs from 'fs';
 import * as path from 'path';
-import glob from 'glob';
 
+import glob from 'glob';
+import dayjs from 'dayjs';
+
+import { config } from '../config';
 import { Resource } from './Resource';
 
 export type SitemapNode = {
@@ -8,7 +12,13 @@ export type SitemapNode = {
   name: string;
   title: string;
   file: string;
+  updated: string;
   children: SitemapNode[];
+};
+
+export type SitemapXMLItem = {
+  slug: string;
+  lastmod: string;
 };
 
 function isTemplate(pagePath: string): boolean {
@@ -25,19 +35,21 @@ export function generateSitemap(): SitemapNode[] {
 
   for (const pageFilePath of pageFilePaths) {
     if (!isTemplate(pageFilePath)) {
-      const pageName = pageFilePath
+      let pageName = pageFilePath
         .replace(pageFileRootPath, '')
         .replace('.tsx', '')
         .split('/')
         .filter(tmp => !!tmp)[0];
       const { data } = require(`../pages/${pageName}`);
-      const slug = ['', pageName].join('/');
+      let slug = ['', pageName].join('/');
+      slug = slug === '/index' ? '/' : slug;
 
       sitemap.push({
         slug,
         name: pageName,
         title: data.title,
         file: slug,
+        updated: dayjs(Date.now()).format('YYYY-MM-DD'),
         children: [],
       });
     } else {
@@ -64,6 +76,7 @@ export function generateSitemap(): SitemapNode[] {
           name: resourceId,
           title: resource.data.title,
           file: slug,
+          updated: dayjs(resource.data.updated).format('YYYY-MM-DD'),
           children: [],
         });
       }
@@ -71,4 +84,44 @@ export function generateSitemap(): SitemapNode[] {
   }
 
   return sitemap;
+}
+
+export function getSitemapXMLItems(sitemap: SitemapNode[]): SitemapXMLItem[] {
+  let sitemapXMLItems: SitemapXMLItem[] = [];
+
+  for (const sm of sitemap) {
+    sitemapXMLItems.push({
+      slug: sm.slug,
+      lastmod: sm.updated,
+    });
+
+    if (sm.children.length) {
+      const tmp = getSitemapXMLItems(sm.children);
+      sitemapXMLItems = sitemapXMLItems.concat(tmp);
+    }
+  }
+  return sitemapXMLItems;
+}
+
+export function generateSitemapXML(sitemap: SitemapNode[]) {
+  const sitemapXMLItems: { slug: string; lastmod: string }[] = getSitemapXMLItems(sitemap);
+  console.log(sitemapXMLItems);
+
+  const XMLSitemap = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
+  ${sitemapXMLItems
+    .map(sitemapXMLItem => {
+      return `
+<url>
+  <loc>${config.host + sitemapXMLItem.slug}</loc>
+  <lastmod>${sitemapXMLItem.lastmod}</lastmod>
+</url>`;
+    })
+    .join('')}
+</urlset>`;
+  return XMLSitemap;
+}
+
+export function saveSitemap(xmlSitemal: string) {
+  fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), xmlSitemal);
 }
