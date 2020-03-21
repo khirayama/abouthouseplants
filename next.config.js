@@ -3,25 +3,6 @@ const path = require('path');
 
 const glob = require('glob');
 
-function generateSitemapXMLFromExportPathMap(exportPathMap) {
-  const host = 'https://www.abouthouseplants.com/';
-  const xmlSitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
-  ${Object.keys(exportPathMap)
-    .map(slug => {
-      return `<url>
-  <loc>${(host + slug).replace('.com//', '.com/')}</loc>
-</url>`;
-    })
-    .join('')}
-</urlset>`;
-  return xmlSitemap;
-}
-
-function saveSitemap(xmlSitemal) {
-  fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), xmlSitemal);
-}
-
 module.exports = {
   webpack: config => {
     return Object.assign({}, config, {
@@ -55,10 +36,6 @@ module.exports = {
         exportPathMap[pageName.replace('index', '/')] = { page: `/${pageName}` };
       }
     });
-
-    // Generate sitemap
-    const xmlSitemap = generateSitemapXMLFromExportPathMap(exportPathMap);
-    saveSitemap(xmlSitemap);
 
     return exportPathMap;
   },
