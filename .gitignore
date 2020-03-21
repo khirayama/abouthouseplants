@@ -5,6 +5,7 @@
 /node_modules
 
 /* next */
+/public/sitemap.xml
 /.next
 /next-env.d.ts
 /out
