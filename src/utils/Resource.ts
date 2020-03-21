@@ -40,7 +40,7 @@ const remarkReactComponents = {
   a: RemarkAnchor,
 };
 
-export type ResourceData<T> = {
+export type ResourceData<T = {}> = {
   title: string;
   description: string;
   thumbnail: string;

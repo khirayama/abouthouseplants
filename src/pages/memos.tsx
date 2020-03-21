@@ -2,7 +2,7 @@ import * as React from 'react';
 import css from 'styled-jsx/css';
 
 import { config as siteConfig } from '../config';
-import { Resource, ResourceShape } from '../utils/Resource';
+import { Resource, ResourceShape, ResourceData } from '../utils/Resource';
 import { Layout } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Heading } from '../components/Heading';
@@ -11,10 +11,18 @@ import { FeaturedMemo } from '../components/FeaturedMemo';
 
 export const config = { amp: true };
 
-export const data = {
+export const data: ResourceData = {
   title: 'メモ一覧',
   description: siteConfig.description,
-  keywords: [],
+  thumbnail: '',
+  seo: {
+    title: 'メモ一覧',
+    description: siteConfig.description,
+    thumbnail: '',
+    keywords: [],
+  },
+  created: '2020-03-12T18:00:00.000+09:00',
+  updated: '2020-03-22T09:00:00.000+09:00',
 };
 
 type LabelsPageProps = {
@@ -36,7 +44,7 @@ export default function LabelsPage(props: LabelsPageProps) {
   return (
     <>
       <style jsx>{styles}</style>
-      <Layout title={data.title} description={data.description} keywords={data.keywords}>
+      <Layout {...data.seo}>
         <Header pathname={props.pathname} />
         <div className="container">
           <Heading>{data.title}</Heading>

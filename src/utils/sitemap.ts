@@ -49,7 +49,7 @@ export function generateSitemap(): SitemapNode[] {
         name: pageName,
         title: data.title,
         file: slug,
-        updated: dayjs(Date.now()).format('YYYY-MM-DD'),
+        updated: dayjs(data.updated).format('YYYY-MM-DD'),
         children: [],
       });
     } else {

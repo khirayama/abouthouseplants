@@ -2,6 +2,7 @@ import * as React from 'react';
 import css from 'styled-jsx/css';
 
 import { config as siteConfig } from '../config';
+import { ResourceData } from '../utils/Resource';
 import { generateSitemap, SitemapNode } from '../utils/sitemap';
 import { Layout } from '../components/Layout';
 import { Header } from '../components/Header';
@@ -11,10 +12,18 @@ import { Link } from '../components/Link';
 
 export const config = { amp: true };
 
-export const data = {
+export const data: ResourceData = {
   title: '目次・サイトマップ',
   description: siteConfig.description,
-  keywords: [],
+  thumbnail: '',
+  seo: {
+    title: siteConfig.name,
+    description: siteConfig.description,
+    thumbnail: '',
+    keywords: [],
+  },
+  created: '2020-03-12T18:00:00.000+09:00',
+  updated: '2020-03-22T09:00:00.000+09:00',
 };
 
 type SitemapPageProps = {
@@ -62,7 +71,7 @@ export default function SitemapPage(props: SitemapPageProps) {
   return (
     <>
       <style jsx>{styles}</style>
-      <Layout title={data.title} description={data.description} keywords={data.keywords}>
+      <Layout {...data.seo}>
         <Header pathname={props.pathname} />
         <div className="container">
           <Heading>{data.title}</Heading>

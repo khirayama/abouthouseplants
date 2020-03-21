@@ -7,6 +7,7 @@ import { resetStyles } from '../styles/resetStyles';
 type LayoutProps = {
   title: string;
   description: string;
+  thumbnail: string;
   keywords: string[];
   children: React.ReactNode;
 };
