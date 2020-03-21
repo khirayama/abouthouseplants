@@ -1,0 +1,3 @@
+User-Agent:*
+Disallow:
+Sitemap:https://www.abouthouseplants.com/sitemap.xml
