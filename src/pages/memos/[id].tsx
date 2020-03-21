@@ -2,7 +2,6 @@ import * as React from 'react';
 import css from 'styled-jsx/css';
 import dayjs from 'dayjs';
 
-import { config as siteConfig } from '../../config';
 import { Resource, ResourceShape } from '../../utils/Resource';
 import { generateSitemap, SitemapNode } from '../../utils/sitemap';
 import { Layout } from '../../components/Layout';
@@ -46,7 +45,7 @@ export default function PostPage(props: PostPageProps) {
   return (
     <>
       <style jsx>{styles}</style>
-      <Layout title={siteConfig.name} description={memo.data.description} keywords={memo.data.keywords}>
+      <Layout title={memo.data.seo.title} description={memo.data.seo.description} keywords={memo.data.seo.keywords}>
         <Header pathname={props.pathname} />
         <Breadcrumb pathname={props.pathname} sitemap={props.sitemap} />
         <section className="container">
