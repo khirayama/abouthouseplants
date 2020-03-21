@@ -105,7 +105,6 @@ export function getSitemapXMLItems(sitemap: SitemapNode[]): SitemapXMLItem[] {
 
 export function generateSitemapXML(sitemap: SitemapNode[]) {
   const sitemapXMLItems: { slug: string; lastmod: string }[] = getSitemapXMLItems(sitemap);
-  console.log(sitemapXMLItems);
 
   const XMLSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 

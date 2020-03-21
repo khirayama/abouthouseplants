@@ -4,8 +4,10 @@
 
 - SEO
   - コンテンツ
-    - title / description / keywordsを設定
-    - keywordsは3つ
+    - title / heading を適切に設定し、SEOに貢献する
+    - description / keywordsはSEO向けではなく、ユーザ向けに設定する
+    - keywordsは3~5に納め、コンテンツはそれに合わせることでフォーカスを絞る
+    - keywordsが3~5を超える場合は、記事の分割を検討する
     - ライティング前にkeywordsを先に設定し、それを軸に書く
   - 構造化データ
     - json+ldを使用し、microdataは使用しない
@@ -21,9 +23,9 @@
   - [サイトマップの作成と送信 - Search Console ヘルプ](https://support.google.com/webmasters/answer/183668)
 
 - TODO
-  - [ ] title / description / keywordsを設定し直す
-  - [ ] json+ldを追加
-  - [ ] googleへのpingをgithub actionsに追加
+  - [ ] title / headingの見直し
+  - [ ] description / keywordsを設定し直す
+  - [ ] json+ldでbreadcrumbを追加
   - [ ] json+ldでサポートする内容を精査する
   - [x] robots.txtを作成
   - [x] robots.txtにSitemapフィールドを含む
@@ -58,7 +60,8 @@
   - sitemap.xmlとrobots.txtの自動生成は `_document` で行う
 
 - TODO
-  - [ ] thumnailフィールドを追加
+  - [x] googleへのpingをgithub actionsに追加
+  - [x] thumnailフィールドを追加
   - [x] sitemap.xmlを `_document` で生成する
   - [x] resource.findをリデザイン
   - [x] notesからmemosに変更

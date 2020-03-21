@@ -46,7 +46,7 @@ export default function PostPage(props: PostPageProps) {
   return (
     <>
       <style jsx>{styles}</style>
-      <Layout title={siteConfig.name} description={memo.data.description} keywords={[]}>
+      <Layout title={siteConfig.name} description={memo.data.description} keywords={memo.data.keywords}>
         <Header pathname={props.pathname} />
         <Breadcrumb pathname={props.pathname} sitemap={props.sitemap} />
         <section className="container">

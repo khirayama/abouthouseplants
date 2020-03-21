@@ -43,6 +43,8 @@ const remarkReactComponents = {
 export type ResourceData<T> = {
   title: string;
   description: string;
+  thumbnail: string;
+  keywords: string[];
   created: string;
   updated: string;
 } & T;
