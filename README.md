@@ -54,6 +54,8 @@
   - styled-jsxを利用
   - buildの複雑化は避ける
   - 可能な限りリーズナブルなアプローチを選ぶ
+- SEO
+  - sitemap.xmlとrobots.txtの自動生成は `_document` で行う
 
 - TODO
   - [ ] thumnailフィールドを追加
