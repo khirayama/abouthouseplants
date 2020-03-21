@@ -122,6 +122,6 @@ export function generateSitemapXML(sitemap: SitemapNode[]) {
   return XMLSitemap;
 }
 
-export function saveSitemap(xmlSitemal: string) {
-  fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), xmlSitemal);
+export function saveSitemap(XMLSitemap: string) {
+  fs.writeFileSync(path.join(process.cwd(), 'public', 'sitemap.xml'), XMLSitemap);
 }
