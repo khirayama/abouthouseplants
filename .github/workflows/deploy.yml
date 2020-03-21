@@ -24,3 +24,4 @@ jobs:
         publish_branch: gh-pages
         publish_dir: ./out
         cname: www.abouthouseplants.com
+    - run: curl http://www.google.com/ping?sitemap=http://www.abouthouseplants.com/sitemap.xml
