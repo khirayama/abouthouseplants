@@ -13,6 +13,7 @@
     - json+ldを使用し、microdataは使用しない
     - json+ldでは、breadcrumbをサポートする
     - json+ldでは、articleをサポートする
+    - json+ldでは、howtoをサポートする
   - サイトマップとrobots.tx
     - xml形式を使用
     - lastmodは必須
@@ -24,12 +25,14 @@
   - [構造化データ マークアップ支援ツール](https://www.google.com/webmasters/markup-helper/u/0/)
   - [構造化データ テストツール](https://search.google.com/structured-data/testing-tool/u/0/?hl=ja)
   - [パンくずリスト  |  Google 検索デベロッパー ガイド  |  Google Developers](https://developers.google.com/search/docs/data-types/breadcrumb?hl=ja)
+  - [ハウツー  |  Google 検索デベロッパー ガイド  |  Google Developers](https://developers.google.com/search/docs/data-types/how-to?hl=ja)
   - [サイトマップの作成と送信 - Search Console ヘルプ](https://support.google.com/webmasters/answer/183668)
 
 - TODO
   - [ ] title / headingの見直し
   - [ ] description / keywordsを設定し直す
-  - [ ] json+ldでサポートする内容を精査する
+  - [ ] json+ldでHowToとArticleのサポート
+  - [x] json+ldでサポートする内容を精査する
   - [x] json+ldでbreadcrumbを追加
   - [x] robots.txtを作成
   - [x] robots.txtにSitemapフィールドを含む
