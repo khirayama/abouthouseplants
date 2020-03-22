@@ -19,7 +19,7 @@ export const data: ResourceData = {
     title: `${siteConfig.name}のメモ一覧`,
     description: `${siteConfig.name}のメモを網羅的に閲覧できる。`,
     thumbnail: '',
-    keywords: [],
+    keywords: ['観葉植物', '入門', '基礎知識', '選び方', '育て方'],
   },
   created: '2020-03-12T18:00:00.000+09:00',
   updated: '2020-03-22T09:00:00.000+09:00',
