@@ -30,9 +30,9 @@
   - [サイトマップの作成と送信 - Search Console ヘルプ](https://support.google.com/webmasters/answer/183668)
 
 - TODO
-  - [ ] title / headingの見直し
   - [ ] description / keywordsを設定し直す
   - [ ] json+ldでHowToとArticleのサポート
+  - [x] title / headingの見直し
   - [x] json+ldでサポートする内容を精査する
   - [x] json+ldでbreadcrumbを追加
   - [x] robots.txtを作成

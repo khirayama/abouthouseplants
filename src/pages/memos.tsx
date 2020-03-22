@@ -12,12 +12,12 @@ import { FeaturedMemo } from '../components/FeaturedMemo';
 export const config = { amp: true };
 
 export const data: ResourceData = {
-  title: 'メモ一覧',
-  description: siteConfig.description,
+  title: `${siteConfig.name}のメモ一覧`,
+  description: `${siteConfig.name}のメモを網羅的に閲覧できる。`,
   thumbnail: '',
   seo: {
-    title: 'メモ一覧',
-    description: siteConfig.description,
+    title: `${siteConfig.name}のメモ一覧`,
+    description: `${siteConfig.name}のメモを網羅的に閲覧できる。`,
     thumbnail: '',
     keywords: [],
   },

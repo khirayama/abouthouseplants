@@ -14,11 +14,11 @@ export const config = { amp: true };
 
 export const data: ResourceData = {
   title: '目次・サイトマップ',
-  description: siteConfig.description,
+  description: `${siteConfig.name}の目次・サイトマップ。`,
   thumbnail: '',
   seo: {
-    title: siteConfig.name,
-    description: siteConfig.description,
+    title: '目次・サイトマップ',
+    description: `${siteConfig.name}の目次・サイトマップ。`,
     thumbnail: '',
     keywords: [],
   },
