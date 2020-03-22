@@ -12,17 +12,16 @@ export const config = { amp: true };
 
 export const data: ResourceData = {
   title: siteConfig.name,
-  description: '基礎知識、選び方、育て方を中心に、手入れ、楽しみ方まで。',
+  description: '選び方、育て方など入門から、飾り方、増やし方など楽しみ方まで',
   thumbnail: '',
   seo: {
-    title: '観葉植物入門 - 基礎知識、選び方、育て方を中心に、手入れ、楽しみ方まで。',
-    description:
-      '第一歩となる網羅的な知識を紹介。基礎知識から、選び方、育て方について。また手入れと楽しみ方も導入として紹介します。',
+    title: `${siteConfig.name} - 選び方、育て方など入門から、飾り方、増やし方など楽しみ方まで`,
+    description: '選び方、育て方など入門から、飾り方、増やし方など楽しみ方まで',
     thumbnail: '',
     keywords: ['観葉植物', '入門', '基礎知識', '選び方', '育て方'],
   },
   created: '2020-03-12T18:00:00.000+09:00',
-  updated: '2020-03-22T09:00:00.000+09:00',
+  updated: '2020-03-23T09:00:00.000+09:00',
 };
 
 type IndexPageProps = {
