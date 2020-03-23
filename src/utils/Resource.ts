@@ -96,17 +96,23 @@ export class Resource {
   }
 
   public static find<T = {}>(type: string, ids?: string[]): ResourceShape<T>[] {
+    function sort(a: ResourceShape<T>, b: ResourceShape<T>) {
+      return new Date(a.data.created).getTime() - new Date(b.data.created).getTime();
+    }
+
     if (ids) {
-      return ids.map(id => Resource.get<T>(type, id));
+      return ids.map(id => Resource.get<T>(type, id)).sort(sort);
     } else {
       const rootPath = path.join(process.cwd(), 'resources', type);
       const mdPaths = glob.sync(`${rootPath}/**/*.md`);
-      return mdPaths.map((mdPath: string) => {
-        const tmp = mdPath.split('/');
-        const type = tmp[tmp.length - 2];
-        const id = tmp[tmp.length - 1].replace('.md', '');
-        return Resource.get<T>(type, id);
-      });
+      return mdPaths
+        .map((mdPath: string) => {
+          const tmp = mdPath.split('/');
+          const type = tmp[tmp.length - 2];
+          const id = tmp[tmp.length - 1].replace('.md', '');
+          return Resource.get<T>(type, id);
+        })
+        .sort(sort);
     }
   }
 
