@@ -7,7 +7,6 @@ import { Layout } from '../components/Layout';
 import { Header } from '../components/Header';
 import { Heading } from '../components/Heading';
 import { Footer } from '../components/Footer';
-import { FeaturedMemo } from '../components/FeaturedMemo';
 
 export const config = { amp: true };
 
@@ -36,6 +35,17 @@ const styles = css`
   .container {
     padding: 24px;
   }
+  .memo-item {
+    padding: 12px 0;
+  }
+  .memo-heading {
+    font-family: serif;
+    font-size: 1.25rem;
+  }
+  .memo-description {
+    font-size: 0.75rem;
+    color: #666;
+  }
 `;
 
 export default function LabelsPage(props: LabelsPageProps) {
@@ -51,8 +61,9 @@ export default function LabelsPage(props: LabelsPageProps) {
           <ul>
             {memos.map(memo => {
               return (
-                <li key={memo.id}>
-                  <FeaturedMemo memo={memo} />
+                <li key={memo.id} className="memo-item">
+                  <h2 className="memo-heading">{memo.data.title}</h2>
+                  <p className="memo-description">{memo.data.description}</p>
                 </li>
               );
             })}
