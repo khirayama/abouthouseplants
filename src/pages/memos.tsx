@@ -1,6 +1,5 @@
 import * as React from 'react';
 import css from 'styled-jsx/css';
-import dayjs from 'dayjs';
 
 import { config as siteConfig } from '../config';
 import { Resource, ResourceShape, ResourceData } from '../utils/Resource';
@@ -9,6 +8,7 @@ import { Header } from '../components/Header';
 import { Heading } from '../components/Heading';
 import { Footer } from '../components/Footer';
 import { Link } from '../components/Link';
+import { Datetime } from '../components/Datetime';
 
 export const config = { amp: true };
 
@@ -48,14 +48,6 @@ const styles = css`
     font-size: 0.75rem;
     color: #666;
   }
-  .date {
-    font-size: 0.75rem;
-    font-family: serif;
-    color: #666666;
-  }
-  .date-label {
-    margin-right: 0.5rem;
-  }
 `;
 
 export default function LabelsPage(props: LabelsPageProps) {
@@ -74,14 +66,8 @@ export default function LabelsPage(props: LabelsPageProps) {
                 <li key={memo.id} className="memo-item">
                   <Link to={memo.slug}>
                     <h2 className="memo-heading">{memo.data.title}</h2>
-                    <div className="date">
-                      <span className="date-label">作成日</span>
-                      <time dateTime={memo.data.created}>{dayjs(memo.data.created).format('YYYY年MM月DD日')}</time>
-                    </div>
-                    <div className="date">
-                      <span className="date-label">最終更新日</span>
-                      <time dateTime={memo.data.updated}>{dayjs(memo.data.updated).format('YYYY年MM月DD日')}</time>
-                    </div>
+                    <Datetime label="作成日" date={memo.data.created} />
+                    <Datetime label="最終更新日" date={memo.data.updated} />
                     <p className="memo-description">{memo.data.description}</p>
                   </Link>
                 </li>
