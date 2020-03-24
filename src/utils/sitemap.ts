@@ -31,7 +31,9 @@ export function generateSitemap(): SitemapNode[] {
   /* Page */
   const resourceFileRootPath = path.join(process.cwd(), 'resources');
   const pageFileRootPath = path.join(process.cwd(), 'src', 'pages');
-  const pageFilePaths = glob.sync(`${pageFileRootPath}/**/*.tsx`);
+  const pageFilePaths = glob
+    .sync(`${pageFileRootPath}/**/*.tsx`)
+    .filter(pageFilePath => pageFilePath.indexOf('404') === -1);
 
   for (const pageFilePath of pageFilePaths) {
     if (!isTemplate(pageFilePath)) {
