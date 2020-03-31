@@ -32,7 +32,7 @@ const styles = css`
 `;
 
 export function getSitemapItems(pathname: string, sitemap: SitemapNode[]): SitemapItem[] {
-  const paths = pathname.split('/').filter(path => !!path);
+  const paths = pathname.split('/').filter((path) => !!path);
   const targetName = paths[0];
   let sitemapItems: SitemapItem[] = [];
 
@@ -53,13 +53,7 @@ export function getSitemapItems(pathname: string, sitemap: SitemapNode[]): Sitem
 }
 
 export function Breadcrumb(props: BreadcrumbProps) {
-  const indexSitemap = props.sitemap.filter(sm => sm.name === 'index')[0];
-  const sitemapItems = [
-    {
-      slug: indexSitemap.slug,
-      title: indexSitemap.title,
-    },
-  ].concat(getSitemapItems(props.pathname, props.sitemap));
+  const sitemapItems: SitemapItem[] = getSitemapItems(props.pathname, props.sitemap);
 
   const ld: {
     '@context': 'https://schema.org';
@@ -92,7 +86,7 @@ export function Breadcrumb(props: BreadcrumbProps) {
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }} />
       </Head>
       <ul className="breadcrumb">
-        {sitemapItems.map(sitemapItem => (
+        {sitemapItems.map((sitemapItem) => (
           <li key={sitemapItem.slug} className="breadcrumb-item">
             <Link to={sitemapItem.slug}>{sitemapItem.title}</Link>
           </li>
