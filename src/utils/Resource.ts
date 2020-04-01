@@ -91,7 +91,9 @@ export class Resource {
       slug,
       type,
       data,
-      contents: result.contents,
+      // TODO: It is for remark v12.0.0. It might be fixed in the future.
+      // contents: result.contents,
+      contents: (result as any).result,
     };
   }
 
