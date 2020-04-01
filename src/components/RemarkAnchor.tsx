@@ -6,6 +6,9 @@ const styles = css`
     text-decoration: underline;
     margin: 0 2px;
   }
+  .remark-anchor:focus {
+    background: rgba(16, 172, 255, 0.3);
+  }
 `;
 
 type RemarkAnchorProps = {

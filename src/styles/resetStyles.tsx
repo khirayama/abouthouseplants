@@ -105,8 +105,4 @@ export const resetStyles = css.global`
     text-align: justify;
     color: #222222;
   }
-
-  p {
-    line-height: 2rem;
-  }
 `;
