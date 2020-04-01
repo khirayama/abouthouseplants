@@ -103,7 +103,7 @@ export class Resource {
     }
 
     if (ids) {
-      return ids.map(id => Resource.get<T>(type, id)).sort(sort);
+      return ids.map((id) => Resource.get<T>(type, id)).sort(sort);
     } else {
       const rootPath = path.join(process.cwd(), 'resources', type);
       const mdPaths = glob.sync(`${rootPath}/**/*.md`);
