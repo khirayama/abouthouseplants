@@ -1,4 +1,5 @@
 import React from 'react';
+import flush from 'styled-jsx/server';
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 
 import { init } from '../utils/init';
@@ -7,9 +8,12 @@ init();
 
 export default class MyDocument extends NextDocument {
   render() {
+    const styles = flush();
+
     return (
       <Html lang="ja">
         <Head>
+          { styles }
           <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
         </Head>
         <body>
