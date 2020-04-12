@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="1221.2275623714868" width="1221.227562371487">
+  <defs>
+    <ellipse id="ellipse-1" opacity="1" rx="400" ry="400" cx="610.6137811857435" cy="610.6137811857435"/>
+    <mask id="mask-2" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse">
+      <rect opacity="1" x="0" y="0" width="1221.227562371487" height="1221.2275623714868" fill="Black"/>
+      <use xlink:href="#ellipse-1" fill="White"/>
+    </mask>
+    <ellipse id="ellipse-3" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+    <ellipse id="ellipse-4" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+    <ellipse id="ellipse-5" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+    <ellipse id="ellipse-6" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+    <ellipse id="ellipse-7" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+    <ellipse id="ellipse-8" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+    <ellipse id="ellipse-9" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+    <ellipse id="ellipse-10" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+    <ellipse id="ellipse-11" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+    <ellipse id="ellipse-12" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+    <ellipse id="ellipse-13" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+    <ellipse id="ellipse-14" opacity="1" rx="120" ry="600" cx="610.6137811857435" cy="610.6137811857435"/>
+  </defs>
+  <g opacity="1">
+    <g opacity="1"/>
+    <g mask="url(#mask-2)">
+      <g transform="translate(610.6137811857435, 610.6137811857435) rotate(165.00005899808755) translate(-610.6137811857435, -610.6137811857435)" opacity="0.48">
+        <use xlink:href="#ellipse-3" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+      <g transform="translate(610.6137811857435, 610.6137811857435) rotate(150.00005363462506) translate(-610.6137811857435, -610.6137811857435)" opacity="0.48">
+        <use xlink:href="#ellipse-4" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+      <g transform="translate(610.6137811857435, 610.6137811857435) rotate(135.00004827116254) translate(-610.6137811857435, -610.6137811857435)" opacity="0.48">
+        <use xlink:href="#ellipse-5" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+      <g transform="translate(610.6137811857435, 610.6137811857435) rotate(120.00004290770003) translate(-610.6137811857435, -610.6137811857435)" opacity="0.48">
+        <use xlink:href="#ellipse-6" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+      <g transform="translate(610.6137811857435, 610.6137811857435) rotate(105.00003754423754) translate(-610.6137811857435, -610.6137811857435)" opacity="0.48">
+        <use xlink:href="#ellipse-7" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+      <g transform="translate(610.6137811857435, 610.6137811857435) rotate(90.00003218077504) translate(-610.6137811857435, -610.6137811857435)" opacity="0.48">
+        <use xlink:href="#ellipse-8" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+      <g transform="translate(610.6137811857435, 610.6137811857435) rotate(75.00002681731253) translate(-610.6137811857435, -610.6137811857435)" opacity="0.48">
+        <use xlink:href="#ellipse-9" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+      <g transform="translate(610.6137811857435, 610.6137811857435) rotate(60.00002145385002) translate(-610.6137811857435, -610.6137811857435)" opacity="0.48">
+        <use xlink:href="#ellipse-10" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+      <g transform="translate(610.6137811857435, 610.6137811857435) rotate(45.00001609038752) translate(-610.6137811857435, -610.6137811857435)" opacity="0.48">
+        <use xlink:href="#ellipse-11" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+      <g transform="translate(610.6137811857435, 610.6137811857435) rotate(30.00001072692501) translate(-610.6137811857435, -610.6137811857435)" opacity="0.48">
+        <use xlink:href="#ellipse-12" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+      <g transform="translate(610.6137811857435, 610.6137811857435) rotate(15.000005363462504) translate(-610.6137811857435, -610.6137811857435)" opacity="0.48">
+        <use xlink:href="#ellipse-13" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+      <g opacity="0.48">
+        <use xlink:href="#ellipse-14" fill="rgb(27,155,39)" fill-opacity="0.89"/>
+      </g>
+    </g>
+  </g>
+</svg>
