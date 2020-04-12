@@ -15,6 +15,7 @@ export default class MyDocument extends NextDocument {
         <Head>
           { styles }
           <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+          <link rel="icon" type="image/png" href="/images/icon.1x.png" />
         </Head>
         <body>
           <amp-analytics type="gtag" data-credentials="include">
