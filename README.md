@@ -20,6 +20,9 @@
     - lastmodは必須
     - robots.txtにSitemapフィールド必須
     - 更新時はpingを送信する(GitHub Actionsで実行する)
+- SNS
+  - Facebook、Twitter、Instagramをサポートする
+  - 適切なOGP画像を利用する
 
 - Refs
   - [構造化データに関するガイドラインに準拠する  |  Google 検索デベロッパー ガイド  |  Google Developers](https://developers.google.com/search/docs/guides/sd-policies)
@@ -48,10 +51,10 @@
 ### クリエイティブ
 
 - TODO
-  - [ ] ロゴ / favicon作成
   - [ ] thumnailの作成
   - [ ] 画像の縦横比固定
   - [ ] アクセシビリティの修正
+  - [x] ロゴ / favicon作成
   - [x] Markdownのスタイル
   - [x] Markdownにanchorリンク
   - [x] `materials` ディレクトリ作成
