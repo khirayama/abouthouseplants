@@ -11,11 +11,10 @@ module.exports = {
       },
     });
   },
-  exportPathMap: () => {
+  exportPathMap: async (defaultPathMap) => {
     const exportPathMap = {};
 
     const resourceTypes = [];
-
     const resourceRootPath = path.join(process.cwd(), 'resources');
     const resourcePaths = glob
       .sync(`${resourceRootPath}/**/*.md`)
@@ -26,15 +25,6 @@ module.exports = {
 
       const resourceId = resourcePath.split('/')[2];
       exportPathMap[resourcePath] = { page: `/${resourceType}/[id]`, query: { id: resourceId } };
-    });
-
-    const pageRootPath = path.join(process.cwd(), 'src', 'pages');
-    const pagePaths = glob.sync(`${pageRootPath}/**/*.tsx`).map((p) => p.replace(pageRootPath, '').replace('.tsx', ''));
-    pagePaths.forEach((pagePath) => {
-      const pageName = pagePath.split('/')[1];
-      if (pagePath.indexOf('[id]') === -1) {
-        exportPathMap[pageName.replace('index', '/')] = { page: `/${pageName}` };
-      }
     });
 
     return exportPathMap;
