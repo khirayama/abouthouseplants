@@ -4,13 +4,6 @@ const path = require('path');
 const glob = require('glob');
 
 module.exports = {
-  webpack: (config) => {
-    return Object.assign({}, config, {
-      node: {
-        fs: 'empty',
-      },
-    });
-  },
   exportPathMap: async (defaultPathMap) => {
     const exportPathMap = {};
 

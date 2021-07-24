@@ -28,9 +28,6 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
 
-    camelcase: 'off',
-    '@typescript-eslint/camelcase': 'error',
-
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     'node/no-missing-import': [
       'error',

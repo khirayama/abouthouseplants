@@ -61,7 +61,7 @@ export default function LabelsPage(props: LabelsPageProps) {
         <div className="container">
           <Heading>{data.title}</Heading>
           <ul>
-            {memos.map(memo => {
+            {memos.map((memo) => {
               return (
                 <li key={memo.id} className="memo-item">
                   <Link to={memo.slug}>

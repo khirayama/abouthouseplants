@@ -55,7 +55,7 @@ export default function SitemapPage(props: SitemapPageProps) {
       <>
         <style jsx>{listStyles}</style>
         <ul className="list">
-          {sitemap.map(site => {
+          {sitemap.map((site) => {
             return (
               <li key={site.slug} className="list-item">
                 <Link to={site.slug}>{site.title}</Link>
@@ -86,6 +86,6 @@ export default function SitemapPage(props: SitemapPageProps) {
 SitemapPage.getInitialProps = (data: any): SitemapPageProps => {
   return {
     pathname: data.req.url,
-    sitemap: generateSitemap().filter(sm => sm.slug !== '/sitemap' && sm.slug !== '/404'),
+    sitemap: generateSitemap().filter((sm) => sm.slug !== '/sitemap' && sm.slug !== '/404'),
   };
 };

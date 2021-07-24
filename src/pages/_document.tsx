@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import flush from 'styled-jsx/server';
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 
@@ -13,13 +13,20 @@ export default class MyDocument extends NextDocument {
     return (
       <Html lang="ja">
         <Head>
-          { styles }
-          <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+          {styles}
+          <script
+            async
+            custom-element="amp-analytics"
+            src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"
+          ></script>
           <link rel="icon" type="image/png" href="/images/icon.1x.png" />
         </Head>
         <body>
           <amp-analytics type="gtag" data-credentials="include">
-            <script type="application/json" dangerouslySetInnerHTML={{ __html: `{
+            <script
+              type="application/json"
+              dangerouslySetInnerHTML={{
+                __html: `{
               "vars": {
                 "gtag_id": "UA-160291296-1",
                 "config" : {
@@ -29,7 +36,9 @@ export default class MyDocument extends NextDocument {
                   }
                 }
               }
-            }`}} />
+            }`,
+              }}
+            />
           </amp-analytics>
           <Main />
           <NextScript />

@@ -33,7 +33,7 @@ export function generateSitemap(): SitemapNode[] {
   const pageFileRootPath = path.join(process.cwd(), 'src', 'pages');
   const pageFilePaths = glob
     .sync(`${pageFileRootPath}/**/*.tsx`)
-    .filter(pageFilePath => pageFilePath.indexOf('404') === -1);
+    .filter((pageFilePath) => pageFilePath.indexOf('404') === -1);
 
   for (const pageFilePath of pageFilePaths) {
     if (!isTemplate(pageFilePath)) {
@@ -41,36 +41,38 @@ export function generateSitemap(): SitemapNode[] {
         .replace(pageFileRootPath, '')
         .replace('.tsx', '')
         .split('/')
-        .filter(tmp => !!tmp)[0];
+        .filter((tmp) => !!tmp)[0];
       const { data } = require(`../pages/${pageName}`);
       let slug = ['', pageName].join('/');
       slug = slug === '/index' ? '/' : slug;
 
-      sitemap.push({
-        slug,
-        name: pageName,
-        title: data.title,
-        file: slug,
-        updated: dayjs(data.updated).format('YYYY-MM-DD'),
-        children: [],
-      });
+      if (data) {
+        sitemap.push({
+          slug,
+          name: pageName,
+          title: data.title,
+          file: slug,
+          updated: dayjs(data.updated).format('YYYY-MM-DD'),
+          children: [],
+        });
+      }
     } else {
       const resourceType = pageFilePath
         .replace(pageFileRootPath, '')
         .replace('.tsx', '')
         .split('/')
-        .filter(tmp => !!tmp)[0];
+        .filter((tmp) => !!tmp)[0];
       const resourceTypeFilePathRoot = path.join(resourceFileRootPath, resourceType);
       const resourceFilePaths = glob.sync(`${resourceTypeFilePathRoot}/**/*.md`);
-      const resourceIds = resourceFilePaths.map(resourceFilePath => {
+      const resourceIds = resourceFilePaths.map((resourceFilePath) => {
         return resourceFilePath
           .replace(resourceTypeFilePathRoot, '')
           .replace('.md', '')
           .split('/')
-          .filter(tmp => !!tmp)[0];
+          .filter((tmp) => !!tmp)[0];
       });
       for (const resourceId of resourceIds) {
-        const parentSitemapNode = sitemap.filter(sm => sm.slug === ['', resourceType].join('/'))[0];
+        const parentSitemapNode = sitemap.filter((sm) => sm.slug === ['', resourceType].join('/'))[0];
         const slug = ['', resourceType, resourceId].join('/');
         const resource = Resource.findOne(resourceType, resourceId);
         parentSitemapNode.children.push({
@@ -111,7 +113,7 @@ export function generateSitemapXML(sitemap: SitemapNode[]) {
   const XMLSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"> 
   ${sitemapXMLItems
-    .map(sitemapXMLItem => {
+    .map((sitemapXMLItem) => {
       return `
 <url>
   <loc>${config.host + sitemapXMLItem.slug}</loc>
