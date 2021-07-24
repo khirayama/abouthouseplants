@@ -295,3 +295,7 @@ keywords: 観葉植物 / ornamental foliage plant / indoor green / indoor plants
 - [Gratisography - Free High-Resolution Photos](http://gratisography.com/)
 - [フリー素材、無料画像の横断検索サイトNo.1【タダピク】](https://www.tadapic.com/)
 - [魅力的なフリー画像 - Pixabay](https://pixabay.com/ja/)
+
+### 参考リンク
+
+- [植木鉢の選び方｜素焼き、陶器、プラスチック鉢の特徴を比較 | ライフハッカー［日本版］](https://www.lifehacker.jp/2021/07/the-difference-between-terracotta-ceramic-and-plastic.html)
