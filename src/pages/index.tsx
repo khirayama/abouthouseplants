@@ -1,5 +1,5 @@
 import * as React from 'react';
-import css from 'styled-jsx/css';
+import { css } from 'styled-jsx/css';
 
 import { config as siteConfig } from '../config';
 import { Resource, ResourceShape, ResourceData } from '../utils/Resource';

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import css from 'styled-jsx/css';
+import { css } from 'styled-jsx/css';
 
 import { Resource, ResourceShape } from '../../utils/Resource';
 import { generateSitemap, SitemapNode } from '../../utils/sitemap';

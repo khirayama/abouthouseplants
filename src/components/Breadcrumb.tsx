@@ -1,5 +1,5 @@
 import * as React from 'react';
-import css from 'styled-jsx/css';
+import { css } from 'styled-jsx/css';
 import Head from 'next/head';
 
 import { config } from '../config';

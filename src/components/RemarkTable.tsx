@@ -1,5 +1,5 @@
 import * as React from 'react';
-import css from 'styled-jsx/css';
+import { css } from 'styled-jsx/css';
 
 const tableStyles = css`
   .remark-table {
